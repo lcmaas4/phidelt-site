@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'TestSohne';
+  src: url('../../public/fonts/TestSohne-Kraftig-BF663d89cd37e26.otf')
+    format('opentype');
+}
+
+header {
+  background-color: #0d1433;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'TestSohne', sans-serif;
+}
+
+.main-logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.main-logo {
+  max-width: 50%;
+}
+
+h1 {
+  margin: 0;
+  font-family: 'TestSohne', sans-serif;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: 'TestSohne', sans-serif;
+}
