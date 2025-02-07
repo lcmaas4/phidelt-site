@@ -34,12 +34,14 @@ nav ul {
   padding: 0;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
+  white-space: nowrap;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 22px;
   font-family: 'TestSohne', sans-serif;
+  white-space: nowrap;
 }
