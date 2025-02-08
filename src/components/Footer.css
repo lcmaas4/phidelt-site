@@ -31,6 +31,10 @@ h1 {
   font-family: 'TestSohne', sans-serif;
 }
 
+.copy-text {
+  font-size: 1.5vw;
+}
+
 .god {
   font-size: 0.75vw;
   color: lightgray;

@@ -1,90 +1,66 @@
-import React from 'react';
 import './About.css';
-import ImageCarousel from './ImageCarousel';
 
 const About: React.FC = () => {
-  const carouselImages = ['steve.jpg', 'joepeanut.jpg'];
-
   return (
-    <div className="fat-wrapper">
-      <div className="about">
-        <div className="about-stuff">
-          <img
-            className="about-image"
-            src="white logo no letters.png"
-            alt="Phi Delta Theta logo without letters"
-          />
-          <h1 className="about-text">Northeastern University</h1>
-          <h3>Friendship - Sound Learning - Rectitude</h3>
-        </div>
-      </div>
-      <div className="about-p">
-        <div className="about-p-image-wrapper">
-          <img className="about-p-image" src="joepeanut.jpg" alt="Joe Peanut" />
-        </div>
-        <div className="about-p-text-wrapper">
-          <h1 className="about-p-text-header">About us</h1>
-          <p className="about-p-text">
-            Founded with the bold vision of helping its brothers "become the
-            greatest version of themselves," the Massachusetts Epsilon Chapter
-            was officially recognized as the 169th active chapter of Phi Delta
-            Theta on February 4th, 2012. A decade and over 350 brothers later,
-            the chapter remains a powerful force for service, philanthropy, and
-            brotherhood throughout Boston and beyond.<br></br>
-            <br></br>
-            <a className="about-button" href="/about">
-              More about us
-            </a>
+    <div className="about">
+      <div className="about-wrapper">
+        <div className="about-text-wrapper">
+          <h1>Phi Delta Theta - Massachusetts Epsilon</h1>
+          <p>
+            Founded in the Spring of 2011 at Northeastern University with the
+            bold vision of helping its brothers “become the greatest version of
+            themselves,” the Massachusetts Epsilon chapter of Phi Delta Theta
+            quickly grew from a small group to nearly 50 members, all sharing a
+            common goal of joining a brotherhood that would inspire personal
+            growth. Less than a year later, on February 4th, 2012, the chapter
+            was officially recognized as the 169th active Phi Delta Theta
+            chapter. A decade and over 350 brothers later, Massachusetts Epsilon
+            continues to be a powerful force for service, philanthropy, and
+            brotherhood, making a lasting impact in Boston and beyond.
           </p>
         </div>
       </div>
-      <hr />
-      <div className="our-brothers-preview">
-        <div className="our-brothers-text-wrapper">
-          <h1 className="our-brothers-text-header">Our Brothers</h1>
-          <p className="our-brothers-text">
-            Our brothers are a diverse group of individuals who come together to
-            form a close-knit community. We are united by our shared values of
-            friendship, sound learning, and rectitude, and we are committed to
-            helping each other grow and succeed. <br></br>
-            <br></br>
-            <a className="about-button" href="/about">
-              See our roster
-            </a>
+      <div className="history-wrapper">
+        <div className="history-text-wrapper">
+          <h1>Our History</h1>
+          <p>
+            On December 26th, 1848, Robert Morrison, John McMillan Wilson, and
+            four classmates, known as the “Immortal Six,” founded Phi Delta
+            Theta at Miami University in Oxford, Ohio. They created the
+            fraternity’s guiding principles and The Bond, which every initiate
+            still signs today. Their vision laid the foundation for a
+            brotherhood that would grow and thrive for generations.
+          </p>
+          <p>
+            Phi Delta Theta quickly expanded, with its second chapter at Indiana
+            University in 1849. The fraternity’s growth was fueled by Walter B.
+            Palmer and George Banta Sr., the “Second Founders,” who helped
+            spread Phi Delta Theta across campuses in the late 19th century.
+          </p>
+          <p>
+            Today, Phi Delta Theta has nearly 190 active chapters and over
+            180,000 alumni worldwide, continuing to foster lifelong friendships,
+            leadership, and service while making a positive impact in
+            communities.
           </p>
         </div>
-        <div className="our-brothers-image-wrapper">
+        <div className="history-image-wrappper">
           <img
-            className="our-brothers-image"
-            src="our brothers.png"
-            alt="Our Brothers"
+            className="history-image"
+            src="history-image.jpg"
+            alt="History of Phi Delt"
           />
         </div>
       </div>
-      <hr />
-      <div className="philanthropy-preview">
-        <div className="philanthropy-image-wrapper">
-          <img className="philanthropy-image" src="steve.jpg" alt="Steve" />
-        </div>
-        <div className="philanthropy-text-wrapper">
-          <h1 className="philanthropy-text-header">Philanthropy</h1>
-          <p className="philanthropy-text">
-            We make it our duty to support those who have been less fortunate
-            than ourselves. As such, our chapter regularly conducts
-            philanthropic work, particularly in support of the LiveLikeLou
-            Foundation to fund ALS research. In 2015, we were recognized as an
-            Iron Phi Chapter due to our outstanding philanthropic fundraising
-            efforts.<br></br>
-            <br></br>
-            <a className="about-button" href="/about">
-              Learn more
-            </a>
-          </p>
+      <div className="morrison-wrapper">
+        <div className="morrison-text-wrapper">
+          <h1>
+            “To do what ought to be done but would not have been done unless I
+            did it, I thought to be my duty.”
+          </h1>
+          <h3>-Robert Morrison, Phi Delta Theta Founder</h3>
         </div>
       </div>
-      <hr />
-      <ImageCarousel images={carouselImages} />
-      <hr />
     </div>
   );
 };

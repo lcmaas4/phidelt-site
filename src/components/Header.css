@@ -7,7 +7,8 @@
 header {
   background-color: #0d1433;
   color: white;
-  padding: 10px;
+  padding: 2vw;
+  height: 15vw;
   text-align: center;
   display: flex;
   justify-content: space-between;
@@ -31,19 +32,38 @@ h1 {
   font-family: 'TestSohne', sans-serif;
 }
 
-nav ul {
+.header-nav ul {
   list-style: none;
   padding: 0;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 1.5vw;
   white-space: nowrap;
 }
 
-nav a {
+.header-link {
   color: white;
   text-decoration: none;
   font-size: 2vw;
   font-family: 'TestSohne', sans-serif;
   white-space: nowrap;
+  position: relative;
+}
+
+.header-nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+.header-nav a:hover::after {
+  width: 100%;
+  left: 0;
+  background: white;
 }

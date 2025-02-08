@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css';
+import { Link } from 'react-router-dom';
 import { FaInstagram } from 'react-icons/fa';
 
 const Header: React.FC = () => {
@@ -8,28 +9,42 @@ const Header: React.FC = () => {
       <a href="/" className="main-logo-wrapper">
         <img className="main-logo" src="white logo.png" alt="Website Logo" />
       </a>
-      <nav>
+      <nav className="header-nav">
         <ul>
           <li>
-            <a
-              href="https://www.instagram.com/phideltneu"
+            <Link
+              className="header-link"
+              to="https://www.instagram.com/phideltneu"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaInstagram />
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/brothers">Our Brothers</a>
+            <Link className="header-link" to="/about">
+              About Us
+            </Link>
           </li>
           <li>
-            <a href="/philanthropy">Philanthropy</a>
+            <Link className="header-link" to="/brothers">
+              Our Brothers
+            </Link>
           </li>
           <li>
-            <a href="/rush">Rush</a>
+            <Link className="header-link" to="/philanthropy">
+              Philanthropy
+            </Link>
           </li>
           <li>
-            <a href="/notion">Notion</a>
+            <Link className="header-link" to="/rush">
+              Rush
+            </Link>
+          </li>
+          <li>
+            <Link className="header-link" to="/notion">
+              Notion
+            </Link>
           </li>
         </ul>
       </nav>
