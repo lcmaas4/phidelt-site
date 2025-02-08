@@ -4,7 +4,12 @@ import ImageCarousel from './ImageCarousel';
 import { Link } from 'react-router-dom';
 
 const Main: React.FC = () => {
-  const carouselImages = ['steve.jpg', 'joepeanut.jpg'];
+  const carouselImages = [
+    'steve.jpg',
+    'joepeanut.jpg',
+    'nuphidelts-logo.png',
+    'white logo.png',
+  ];
 
   return (
     <div className="fat-wrapper">

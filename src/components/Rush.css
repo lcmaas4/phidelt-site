@@ -1,0 +1,15 @@
+.rush-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  margin: 5vh;
+}
+
+.rush-title {
+  font-family: 'TestSohne';
+  font-size: 1.75vw;
+  margin: 1vw;
+  color: #333;
+}
