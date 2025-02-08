@@ -25,8 +25,8 @@ const Footer: React.FC = () => {
         &copy; 2025 Phi Delta Theta Massachusetts Epsilon Chapter
       </p>
       <p className="god">
-        Special thanks to Louie Maas #276, Iron Phi #2082, Upsilon class, Class
-        of 2025
+        Special thanks to Louie Maas #276, Iron Phi #2082, Upsilon class,
+        Northeastern c/o 2025
       </p>
     </footer>
   );
