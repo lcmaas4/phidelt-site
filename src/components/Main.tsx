@@ -1,6 +1,7 @@
 import React from 'react';
 import './Main.css';
 import ImageCarousel from './ImageCarousel';
+import { Link } from 'react-router-dom';
 
 const Main: React.FC = () => {
   const carouselImages = ['steve.jpg', 'joepeanut.jpg'];
@@ -33,9 +34,9 @@ const Main: React.FC = () => {
             the chapter remains a powerful force for service, philanthropy, and
             brotherhood throughout Boston and beyond.<br></br>
             <br></br>
-            <a className="about-button" href="/about">
+            <Link className="about-button" to="/about">
               More about us
-            </a>
+            </Link>
           </p>
         </div>
       </div>
@@ -49,9 +50,9 @@ const Main: React.FC = () => {
             friendship, sound learning, and rectitude, and we are committed to
             helping each other grow and succeed. <br></br>
             <br></br>
-            <a className="about-button" href="/about">
+            <Link className="about-button" to="/about">
               See our roster
-            </a>
+            </Link>
           </p>
         </div>
         <div className="our-brothers-image-wrapper">
@@ -70,16 +71,15 @@ const Main: React.FC = () => {
         <div className="philanthropy-text-wrapper">
           <h1 className="philanthropy-text-header">Philanthropy</h1>
           <p className="philanthropy-text">
-            We make it our duty to support those who have been less fortunate
-            than ourselves. As such, our chapter regularly conducts
-            philanthropic work, particularly in support of the LiveLikeLou
-            Foundation to fund ALS research. In 2015, we were recognized as an
-            Iron Phi Chapter due to our outstanding philanthropic fundraising
-            efforts.<br></br>
+            We find deep fulfillment in offering our support to the
+            underprivileged. Our chapter regularly conducts philanthropic work,
+            particularly in support of the LiveLikeLou Foundation to fund ALS
+            research. In 2015, we were recognized as an Iron Phi Chapter due to
+            our outstanding philanthropic fundraising efforts.<br></br>
             <br></br>
-            <a className="about-button" href="/about">
+            <Link className="about-button" to="/philanthropy">
               Learn more
-            </a>
+            </Link>
           </p>
         </div>
       </div>

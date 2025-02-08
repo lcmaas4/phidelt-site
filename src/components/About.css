@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'TestSohne';
+  src: url('../../public/fonts/TestSohne-Kraftig-BF663d89cd37e26.otf')
+    format('opentype');
+}
+
 .about-wrapper {
   display: flex;
   flex-direction: column;
@@ -16,12 +22,14 @@
 }
 
 .about-text-wrapper h1 {
+  font-family: 'TestSohne';
   font-size: 3vw;
   margin: 1vw;
   color: #333;
 }
 
 .about-text-wrapper p {
+  font-family: 'TestSohne';
   font-size: 1.5vw;
   margin: 1vw;
 }
@@ -44,12 +52,14 @@
 }
 
 .history-text-wrapper h1 {
+  font-family: 'TestSohne';
   font-size: 3vw;
   margin: 1vw;
   color: white;
 }
 
 .history-text-wrapper p {
+  font-family: 'TestSohne';
   font-size: 1.5vw;
   margin: 1vw;
   color: white;
@@ -73,12 +83,14 @@
 }
 
 .morrison-wrapper h1 {
+  font-family: 'TestSohne';
   font-size: 3vw;
   margin: 0 2.5vw 1vw 2.5vw;
   color: white;
 }
 
 .morrison-wrapper h3 {
+  font-family: 'TestSohne';
   font-size: 2vw;
   color: white;
   text-align: right;

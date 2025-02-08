@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import About from './components/About';
+import Notion from './components/Notion';
 
 const App: React.FC = () => {
   return (
@@ -12,8 +13,9 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/about" element={<About />} />
+        <Route path="/notion" element={<Notion />} />
         {/* <Route path="/our-brothers" element={<OurBrothers />} />
-        <Route path="/ghq" element={<GHQ />} />
+        <Route path="/philanthropy" element={<Philanthropy />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} /> Catch-all for 404s */}
       </Routes>
