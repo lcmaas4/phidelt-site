@@ -7,7 +7,7 @@ const About: React.FC = () => {
       <img
         className="about-image"
         src="white logo no letters.png"
-        alt="About us image"
+        alt="Phi Delta Theta logo without letters"
       />
       <h1 className="about-text">Northeastern University</h1>
       <h3>Friendship - Sound Learning - Rectitude</h3>
