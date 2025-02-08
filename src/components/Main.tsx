@@ -30,7 +30,7 @@ const Main: React.FC = () => {
           <img className="about-p-image" src="joepeanut.jpg" alt="Joe Peanut" />
         </div>
         <div className="about-p-text-wrapper">
-          <h1 className="about-p-text-header">About us</h1>
+          <h1 className="about-p-text-header">Our story</h1>
           <p className="about-p-text">
             Founded with the bold vision of helping its brothers "become the
             greatest version of themselves," the Massachusetts Epsilon Chapter
@@ -48,14 +48,14 @@ const Main: React.FC = () => {
       <hr />
       <div className="our-brothers-preview">
         <div className="our-brothers-text-wrapper">
-          <h1 className="our-brothers-text-header">Our Brothers</h1>
+          <h1 className="our-brothers-text-header">Our brothers</h1>
           <p className="our-brothers-text">
             Our brothers are a diverse group of individuals who come together to
             form a close-knit community. We are united by our shared values of
             friendship, sound learning, and rectitude, and we are committed to
             helping each other grow and succeed. <br></br>
             <br></br>
-            <Link className="about-button" to="/about">
+            <Link className="about-button" to="/brothers">
               See our roster
             </Link>
           </p>
@@ -74,7 +74,7 @@ const Main: React.FC = () => {
           <img className="philanthropy-image" src="steve.jpg" alt="Steve" />
         </div>
         <div className="philanthropy-text-wrapper">
-          <h1 className="philanthropy-text-header">Philanthropy</h1>
+          <h1 className="philanthropy-text-header">Our impact</h1>
           <p className="philanthropy-text">
             We find deep fulfillment in offering our support to the
             underprivileged. Our chapter regularly conducts philanthropic work,

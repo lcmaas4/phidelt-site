@@ -32,8 +32,8 @@ const Header: React.FC = () => {
             </Link>
           </li>
           <li>
-            <Link className="header-link" to="/philanthropy">
-              Philanthropy
+            <Link className="header-link" to="/impact">
+              Our Impact
             </Link>
           </li>
           <li>
