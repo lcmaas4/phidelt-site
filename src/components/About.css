@@ -4,8 +4,21 @@
     format('opentype');
 }
 
+.fat-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+hr {
+  width: 95%;
+  margin: 5% 0;
+}
+
 .about {
-  min-height: 600px;
+  min-height: 60vw;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -14,16 +27,25 @@
   font-family: 'TestSohne', sans-serif;
   background-color: white;
   background-image: url('../../public/formal\ flick.png');
-  background-size: 75%;
+  background-size: 90%;
   background-position: center;
   background-blend-mode: multiply;
   background-repeat: no-repeat;
-  padding-bottom: 27.5%;
+  padding: 4.25vw 0;
+}
+
+.about-stuff {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 30vw;
+  width: 100%;
 }
 
 .about-image {
   width: 25%;
-  margin: 20px 0;
+  margin: 0;
   align-self: center;
 }
 
@@ -32,7 +54,7 @@
   font-family: 'TestSohne', sans-serif;
   text-align: center;
   color: white;
-  font-size: 60px;
+  font-size: 5vw;
 }
 
 .about h3 {
@@ -40,13 +62,13 @@
   font-family: 'TestSohne', sans-serif;
   text-align: center;
   color: white;
-  font-size: 20px;
+  font-size: 2vw;
 }
 
 .about-p {
   font-family: 'TestSohne', sans-serif;
   color: white;
-  font-size: 20px;
+  font-size: 1vw;
   text-align: center;
   display: flex;
   flex-direction: row;
@@ -59,9 +81,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
   width: 25%;
-  padding: 0 15% 0 20%;
+  padding: 0 0 0 7.5%;
 }
 
 .about-p-image {
@@ -69,25 +90,136 @@
 }
 
 .about-p-text-wrapper {
-  width: 50%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: left;
+  padding: 0 12.5% 0 12.5%;
 }
 
 .about-p-text-header {
   font-family: 'TestSohne', sans-serif;
   color: black;
-  font-size: 40px;
+  font-size: 4vw;
   text-align: left;
-  width: 50%;
 }
 
 .about-p-text {
   font-family: 'TestSohne', sans-serif;
   color: black;
-  font-size: 20px;
+  font-size: 2vw;
   text-align: left;
-  width: 50%;
+}
+
+.our-brothers-preview {
+  font-family: 'TestSohne', sans-serif;
+  color: white;
+  font-size: 1vw;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.our-brothers-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  padding: 0 7.5% 0 0;
+}
+
+.our-brothers-image {
+  width: 100%;
+}
+
+.our-brothers-text-wrapper {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 0 12.5% 0 12.5%;
+}
+
+.our-brothers-text-header {
+  font-family: 'TestSohne', sans-serif;
+  color: black;
+  font-size: 4vw;
+  text-align: left;
+}
+
+.our-brothers-text {
+  font-family: 'TestSohne', sans-serif;
+  color: black;
+  font-size: 2vw;
+  text-align: left;
+}
+
+.philanthropy-preview {
+  font-family: 'TestSohne', sans-serif;
+  color: white;
+  font-size: 1vw;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.philanthropy-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  padding: 0 0 0 7.5%;
+}
+
+.philanthropy-image {
+  width: 100%;
+}
+
+.philanthropy-text-wrapper {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 0 12.5% 0 12.5%;
+}
+
+.philanthropy-text-header {
+  font-family: 'TestSohne', sans-serif;
+  color: black;
+  font-size: 4vw;
+  text-align: left;
+}
+
+.philanthropy-text {
+  font-family: 'TestSohne', sans-serif;
+  color: black;
+  font-size: 2vw;
+  text-align: left;
+}
+
+.carousel-image {
+  height: 20vw;
+}
+
+.about-button {
+  font-family: 'TestSohne', sans-serif;
+  color: white;
+  width: 20vw;
+  font-size: 2vw;
+  text-align: center;
+  padding: 1vw 2vw;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: #0d1433;
+  margin: 5vw 0;
+  text-decoration: none;
 }

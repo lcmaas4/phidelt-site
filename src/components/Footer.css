@@ -4,25 +4,25 @@
     format('opentype');
 }
 
-header {
-  background-color: #0d1433;
+footer {
+  background-color: #619cc7;
   color: white;
   padding: 10px;
   text-align: center;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   font-family: 'TestSohne', sans-serif;
 }
 
-.main-logo-wrapper {
+.main-logo-footer-wrapper {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  width: 100%;
+  justify-content: center;
 }
 
-.main-logo {
+.main-logo-footer {
   max-width: 50%;
 }
 
@@ -31,7 +31,12 @@ h1 {
   font-family: 'TestSohne', sans-serif;
 }
 
-nav ul {
+.god {
+  font-size: 0.75vw;
+  color: lightgray;
+}
+
+.footer-nav ul {
   list-style: none;
   padding: 0;
   display: flex;
@@ -40,10 +45,14 @@ nav ul {
   white-space: nowrap;
 }
 
-nav a {
-  color: white;
+.footer-nav a {
+  color: #0d1433;
   text-decoration: none;
   font-size: 2vw;
   font-family: 'TestSohne', sans-serif;
   white-space: nowrap;
+  padding: 5px 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: white;
 }
