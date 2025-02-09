@@ -11,38 +11,33 @@
   gap: 15%;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   background-color: white;
 }
 
 .exec-image-wrapper {
-  max-width: 40vh;
+  width: 40vw;
   padding: 2.5vh 0;
-  gap: 5vh 40vh;
-  padding: 15vh 0;
+  gap: 2vh 5vw;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   justify-content: center;
-}
-
-@media (min-width: 1000px) {
-  .exec-image-wrapper {
-    flex-direction: row;
-  }
 }
 
 .exec-text-header {
   font-family: 'TestSohne';
   font-size: 3vw;
   color: #0d1433;
+  width: 60vw;
+  text-align: center;
 }
 
 .exec-image {
-  max-width: 40vh;
-  max-height: 40vh;
+  max-width: min(60vw, 500px);
+  max-height: min(60vw, 500px);
 }
 
 .exec-people-wrapper {
@@ -56,6 +51,17 @@
   gap: 3.5vw 0;
 }
 
+.exec-brother-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #0d1433;
+  position: relative;
+  width: 22vw;
+  height: 22vw;
+}
+
 .council-wrapper {
   width: 100%;
   gap: 15%;
@@ -67,15 +73,14 @@
 }
 
 .council-image-wrapper {
-  max-width: 60vh;
+  width: 40vw;
+  padding: 2.5vh 0;
+  gap: 2vh 5vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  box-sizing: border-box;
-  overflow: visible;
-  flex-shrink: 1;
 }
 
 .council-text-header {
@@ -89,13 +94,36 @@
   max-height: 60vh;
 }
 
+.council-people-wrapper {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: #0d1433;
+  justify-items: center;
+  grid-auto-flow: center;
+  align-items: center;
+  padding: 3.5vw 0;
+  gap: 3.5vw 0;
+}
+
+.council-brother-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #0d1433;
+  position: relative;
+  width: 18vw;
+  height: 18vw;
+}
+
 .brother-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #0d1433;
-  position: relative; /* ✅ Ensures absolute children stay inside */
+  position: relative;
   width: 27vw;
   height: 27vw;
 }
@@ -107,17 +135,24 @@
   color: white;
   text-align: center;
   width: 100%;
-  height: 100%;
-  top: 0;
+  height: 33.3%;
+  bottom: 0;
   left: 0;
   justify-content: center;
   align-items: center;
   z-index: 2;
+  transform: translateY(100%);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition:
+    transform 0.3s 0s ease-in,
+    opacity 0.3s 0s ease-in;
 }
 
-.brother-container:hover .brother-info {
+.brother-container:hover .brother-info,
+.exec-brother-container:hover .brother-info,
+.council-brother-container:hover .brother-info,
+.plebs-brother-container:hover .brother-info {
+  transform: translateY(0);
   opacity: 1;
 }
 
@@ -125,4 +160,37 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.plebs-wrapper {
+  width: 100%;
+  gap: 15%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: white;
+}
+
+.plebs-people-wrapper {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background-color: #0d1433;
+  justify-items: center;
+  grid-auto-flow: center;
+  align-items: center;
+  padding: 3.5vw 0;
+  gap: 3.5vw 0;
+}
+
+.plebs-brother-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #0d1433;
+  position: relative;
+  width: 13vw;
+  height: 13vw;
 }

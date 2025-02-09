@@ -7,11 +7,13 @@ import About from './components/About';
 import Notion from './components/Notion';
 import Rush from './components/Rush';
 import Brothers from './components/Brothers';
+import './App.css';
 
 const App: React.FC = () => {
   return (
     <Router>
-      <Header /> {/* ✅ Navigation bar stays at the top */}
+      <Header />
+      <div className="header-spacer"></div>
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/about" element={<About />} />

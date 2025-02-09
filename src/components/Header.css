@@ -7,13 +7,23 @@
 header {
   background-color: #0d1433;
   color: white;
-  padding: 2vw;
-  height: 15vw;
+  padding: 2vw 0;
+  height: 12vw;
   text-align: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: 'TestSohne', sans-serif;
+  position: fixed; /* ✅ Fixes the header at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.hidden {
+  transform: translateY(-100%); /* ✅ Moves the header out of view */
 }
 
 .main-logo-wrapper {
@@ -21,6 +31,7 @@ header {
   align-items: center;
   justify-content: flex-start;
   width: 100%;
+  margin-left: 2vw;
 }
 
 .main-logo {
@@ -39,6 +50,7 @@ h1 {
   justify-content: center;
   gap: 1.5vw;
   white-space: nowrap;
+  margin-right: 2vw;
 }
 
 .header-link {

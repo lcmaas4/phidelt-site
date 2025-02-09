@@ -10,3 +10,7 @@
 .App > * {
   margin-bottom: 20px;
 }
+
+.header-spacer {
+  height: 16vw;
+}
