@@ -62,6 +62,32 @@
   height: 22vw;
 }
 
+@media (max-width: 1000px) {
+  .exec-people-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .exec-brother-container {
+    width: 80vw;
+    height: 80vw;
+  }
+  .exec-brother-spacer-2 {
+    display: block;
+  }
+  .exec-brother-spacer-1 {
+    display: none;
+  }
+}
+
+@media (min-width: 1001px) {
+  .exec-brother-spacer-1 {
+    display: block;
+  }
+  .exec-brother-spacer-2 {
+    display: none;
+  }
+}
+
 .council-wrapper {
   width: 100%;
   gap: 15%;
@@ -117,6 +143,32 @@
   height: 18vw;
 }
 
+@media (max-width: 1000px) {
+  .council-people-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .council-brother-container {
+    width: 35vw;
+    height: 35vw;
+  }
+  .council-brother-spacer-2 {
+    display: block;
+  }
+  .council-brother-spacer-1 {
+    display: none;
+  }
+}
+
+@media (min-width: 1001px) {
+  .council-brother-spacer-1 {
+    display: block;
+  }
+  .council-brother-spacer-2 {
+    display: none;
+  }
+}
+
 .brother-container {
   display: flex;
   flex-direction: column;
@@ -129,6 +181,7 @@
 }
 
 .brother-info {
+  font-family: 'TestSohne';
   display: flex;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.7);
@@ -193,4 +246,40 @@
   position: relative;
   width: 13vw;
   height: 13vw;
+}
+
+@media (max-width: 1000px) {
+  .plebs-people-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .plebs-brother-container {
+    width: 22vw;
+    height: 22vw;
+  }
+  .plebs-brother-spacer-2 {
+    display: block;
+  }
+  .plebs-brother-spacer-1 {
+    display: none;
+  }
+}
+
+@media (min-width: 1001px) {
+  .plebs-brother-spacer-1 {
+    display: block;
+  }
+  .plebs-brother-spacer-2 {
+    display: none;
+  }
+}
+
+.plebs-brother-spacer-1 {
+  width: 13vw;
+  height: 13vw;
+}
+
+.plebs-brother-spacer-2 {
+  width: 18vw;
+  height: 18vw;
 }

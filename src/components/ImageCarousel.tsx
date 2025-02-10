@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './ImageCarousel.css';
 
-const ImageCarousel: React.FC<{ images: string[] }> = ({ images }) => {
+interface ImageCarouselProps {
+  images: string[];
+}
+
+const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -10,7 +14,7 @@ const ImageCarousel: React.FC<{ images: string[] }> = ({ images }) => {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, []);
 
   return (
     <div className="image-carousel">

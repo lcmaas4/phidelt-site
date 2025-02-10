@@ -121,7 +121,7 @@ const Brothers: React.FC = () => {
               </p>
             </div>
           </div>
-          <div className="exec-brother-container"></div>
+          <div className="exec-brother-spacer-1"></div>
           <div className="exec-brother-container">
             <img
               className="brother-image"
@@ -290,7 +290,7 @@ const Brothers: React.FC = () => {
               </p>
             </div>
           </div>
-          <div className="council-brother-container"></div>
+          <div className="council-brother-spacer-1"></div>
           <div className="council-brother-container">
             <img
               className="brother-image"
@@ -327,6 +327,7 @@ const Brothers: React.FC = () => {
           <h1 className="council-text-header">Plebs</h1>
         </div>
         <div className="plebs-people-wrapper">
+          <div className="plebs-brother-spacer-2"></div>
           <div className="plebs-brother-container">
             <img
               className="brother-image"
@@ -339,6 +340,7 @@ const Brothers: React.FC = () => {
               </p>
             </div>
           </div>
+          <div className="plebs-brother-spacer-2"></div>
           <div className="plebs-brother-container">
             <img
               className="brother-image"
@@ -985,7 +987,7 @@ const Brothers: React.FC = () => {
               <p>Mike Stottlemeyer</p>
             </div>
           </div>
-          <div className="plebs-brother-container"></div>
+          <div className="plebs-brother-spacer-1"></div>
           <div className="plebs-brother-container">
             <img
               className="brother-image"
@@ -1006,6 +1008,7 @@ const Brothers: React.FC = () => {
               <p>Jack Conger</p>
             </div>
           </div>
+          <div className="plebs-brother-spacer-2"></div>
           <div className="plebs-brother-container">
             <img
               className="brother-image"
