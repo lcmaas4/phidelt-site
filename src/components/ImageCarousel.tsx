@@ -14,7 +14,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   return (
     <div className="image-carousel">
