@@ -121,7 +121,6 @@ const Brothers: React.FC = () => {
               </p>
             </div>
           </div>
-          <div className="exec-brother-spacer-1"></div>
           <div className="exec-brother-container">
             <img
               className="brother-image"
@@ -146,6 +145,7 @@ const Brothers: React.FC = () => {
           <h1 className="council-text-header">Council</h1>
         </div>
         <div className="council-people-wrapper">
+          <div className="council-brother-spacer-1"></div>
           <div className="council-brother-container">
             <img
               className="brother-image"
@@ -158,6 +158,7 @@ const Brothers: React.FC = () => {
               </p>
             </div>
           </div>
+          <div className="council-brother-spacer-1"></div>
           <div className="council-brother-container">
             <img
               className="brother-image"
@@ -290,7 +291,6 @@ const Brothers: React.FC = () => {
               </p>
             </div>
           </div>
-          <div className="council-brother-spacer-1"></div>
           <div className="council-brother-container">
             <img
               className="brother-image"
@@ -303,6 +303,7 @@ const Brothers: React.FC = () => {
               </p>
             </div>
           </div>
+          <div className="council-brother-spacer-1"></div>
           <div className="council-brother-container">
             <img
               className="brother-image"
@@ -319,15 +320,20 @@ const Brothers: React.FC = () => {
       </div>
       <div className="plebs-wrapper">
         <div className="council-image-wrapper">
-          <img
-            className="council-image"
-            src="nuphidelts-logo.png"
-            alt="Plebs"
-          />
-          <h1 className="council-text-header">Plebs</h1>
+          <h1 className="council-text-header">&Omega;</h1>
         </div>
         <div className="plebs-people-wrapper">
           <div className="plebs-brother-spacer-2"></div>
+          <div className="plebs-brother-container">
+            <img
+              className="brother-image"
+              src="composites/343singh.jpg"
+              alt="Singh"
+            />
+            <div className="brother-info">
+              <p>Vivek Singh</p>
+            </div>
+          </div>
           <div className="plebs-brother-container">
             <img
               className="brother-image"
@@ -335,12 +341,30 @@ const Brothers: React.FC = () => {
               alt="M Schaefer"
             />
             <div className="brother-info">
-              <p>
-                Max Schaefer<br></br>Omega
-              </p>
+              <p>Maximum Schaefer</p>
             </div>
           </div>
           <div className="plebs-brother-spacer-2"></div>
+          <div className="plebs-brother-container">
+            <img
+              className="brother-image"
+              src="composites/341petrecca.jpg"
+              alt="Petrecca"
+            />
+            <div className="brother-info">
+              <p>Mitchell Petrecca</p>
+            </div>
+          </div>
+          <div className="plebs-brother-container">
+            <img
+              className="brother-image"
+              src="composites/340olson.jpg"
+              alt="Olson"
+            />
+            <div className="brother-info">
+              <p>Carter Olson</p>
+            </div>
+          </div>
           <div className="plebs-brother-container">
             <img
               className="brother-image"
@@ -348,9 +372,7 @@ const Brothers: React.FC = () => {
               alt="Maravell"
             />
             <div className="brother-info">
-              <p>
-                Dante Maravell<br></br>Omega
-              </p>
+              <p>Dante Maravell</p>
             </div>
           </div>
           <div className="plebs-brother-container">
@@ -360,9 +382,7 @@ const Brothers: React.FC = () => {
               alt="Lyon"
             />
             <div className="brother-info">
-              <p>
-                Brad Lyon<br></br>Omega
-              </p>
+              <p>Brad Lyon</p>
             </div>
           </div>
           <div className="plebs-brother-container">
@@ -372,9 +392,7 @@ const Brothers: React.FC = () => {
               alt="Liao 2"
             />
             <div className="brother-info">
-              <p>
-                Justin Liao<br></br>Omega
-              </p>
+              <p>Justin Liao</p>
             </div>
           </div>
           <div className="plebs-brother-container">
@@ -385,6 +403,26 @@ const Brothers: React.FC = () => {
             />
             <div className="brother-info">
               <p>Matt Lawson</p>
+            </div>
+          </div>
+          <div className="plebs-brother-container">
+            <img
+              className="brother-image"
+              src="composites/335koratagere.jpg"
+              alt="Koratagere"
+            />
+            <div className="brother-info">
+              <p>Gaurav Koratagere</p>
+            </div>
+          </div>
+          <div className="plebs-brother-container">
+            <img
+              className="brother-image"
+              src="composites/334kirk.jpg"
+              alt="Kirk"
+            />
+            <div className="brother-info">
+              <p>Maximum Kirk</p>
             </div>
           </div>
           <div className="plebs-brother-container">
@@ -405,6 +443,16 @@ const Brothers: React.FC = () => {
             />
             <div className="brother-info">
               <p>Etienne Groom</p>
+            </div>
+          </div>
+          <div className="plebs-brother-container">
+            <img
+              className="brother-image"
+              src="composites/331eisner.jpg"
+              alt="Eisner"
+            />
+            <div className="brother-info">
+              <p>Jake Queefner</p>
             </div>
           </div>
           <div className="plebs-brother-container">
@@ -434,7 +482,7 @@ const Brothers: React.FC = () => {
               alt="Brothers"
             />
             <div className="brother-info">
-              <p>Max Brothers</p>
+              <p>Maximum Brothers</p>
             </div>
           </div>
           <div className="plebs-brother-container">
@@ -447,6 +495,11 @@ const Brothers: React.FC = () => {
               <p>Nate Beland</p>
             </div>
           </div>
+        </div>
+        <div className="council-image-wrapper">
+          <h1 className="council-text-header">&Psi;</h1>
+        </div>
+        <div className="plebs-people-wrapper">
           <div className="plebs-brother-container">
             <img
               className="brother-image"
@@ -460,11 +513,11 @@ const Brothers: React.FC = () => {
           <div className="plebs-brother-container">
             <img
               className="brother-image"
-              src="composites/323repaka.jpg"
-              alt="Repaka"
+              src="composites/325smith.jpg"
+              alt="Smith"
             />
             <div className="brother-info">
-              <p>Satvik Repaka</p>
+              <p>Theo Smith</p>
             </div>
           </div>
           <div className="plebs-brother-container">
@@ -480,11 +533,31 @@ const Brothers: React.FC = () => {
           <div className="plebs-brother-container">
             <img
               className="brother-image"
+              src="composites/323repaka.jpg"
+              alt="Repaka"
+            />
+            <div className="brother-info">
+              <p>Satvik Repaka</p>
+            </div>
+          </div>
+          <div className="plebs-brother-container">
+            <img
+              className="brother-image"
               src="composites/322pirozzi.jpg"
               alt="Pirozzi"
             />
             <div className="brother-info">
               <p>Mike Pirozzi</p>
+            </div>
+          </div>
+          <div className="plebs-brother-container">
+            <img
+              className="brother-image"
+              src="composites/321oates.jpg"
+              alt="Oates"
+            />
+            <div className="brother-info">
+              <p>Connor Oates</p>
             </div>
           </div>
           <div className="plebs-brother-container">
@@ -510,11 +583,31 @@ const Brothers: React.FC = () => {
           <div className="plebs-brother-container">
             <img
               className="brother-image"
+              src="composites/318dubanowitz-a.jpg"
+              alt="A Dubanowitz"
+            />
+            <div className="brother-info">
+              <p>Andrew Dubanowitz</p>
+            </div>
+          </div>
+          <div className="plebs-brother-container">
+            <img
+              className="brother-image"
               src="composites/317d'avanzo.jpg"
               alt="D'Avanzo"
             />
             <div className="brother-info">
               <p>Andrew D'Avanzo</p>
+            </div>
+          </div>
+          <div className="plebs-brother-container">
+            <img
+              className="brother-image"
+              src="composites/317cooke.jpg"
+              alt="Cooke"
+            />
+            <div className="brother-info">
+              <p>Oliver Cooke</p>
             </div>
           </div>
           <div className="plebs-brother-container">
@@ -537,6 +630,11 @@ const Brothers: React.FC = () => {
               <p>Tej Chakravarthy</p>
             </div>
           </div>
+        </div>
+        <div className="council-image-wrapper">
+          <h1 className="council-text-header">&Chi;</h1>
+        </div>
+        <div className="plebs-people-wrapper">
           <div className="plebs-brother-container">
             <img
               className="brother-image"
@@ -567,6 +665,11 @@ const Brothers: React.FC = () => {
               <p>Xander Au</p>
             </div>
           </div>
+        </div>
+        <div className="council-image-wrapper">
+          <h1 className="council-text-header">&Phi;</h1>
+        </div>
+        <div className="plebs-people-wrapper">
           <div className="plebs-brother-container">
             <img
               className="brother-image"
@@ -727,6 +830,11 @@ const Brothers: React.FC = () => {
               <p>Jack Anderson</p>
             </div>
           </div>
+        </div>
+        <div className="council-image-wrapper">
+          <h1 className="council-text-header">&Upsilon;</h1>
+        </div>
+        <div className="plebs-people-wrapper">
           <div className="plebs-brother-container">
             <img
               className="brother-image"
@@ -847,6 +955,11 @@ const Brothers: React.FC = () => {
               <p>Martin Androssenko</p>
             </div>
           </div>
+        </div>
+        <div className="council-image-wrapper">
+          <h1 className="council-text-header">&Tau;</h1>
+        </div>
+        <div className="plebs-people-wrapper">
           <div className="plebs-brother-container">
             <img
               className="brother-image"
@@ -937,6 +1050,11 @@ const Brothers: React.FC = () => {
               <p>Lucas Deeb</p>
             </div>
           </div>
+        </div>
+        <div className="council-image-wrapper">
+          <h1 className="council-text-header">&Sigma;</h1>
+        </div>
+        <div className="plebs-people-wrapper">
           <div className="plebs-brother-container">
             <img
               className="brother-image"
@@ -987,7 +1105,6 @@ const Brothers: React.FC = () => {
               <p>Mike Stottlemeyer</p>
             </div>
           </div>
-          <div className="plebs-brother-spacer-1"></div>
           <div className="plebs-brother-container">
             <img
               className="brother-image"

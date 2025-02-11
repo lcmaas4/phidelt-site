@@ -27,7 +27,11 @@ const Main: React.FC = () => {
       <hr />
       <div className="about-p">
         <div className="about-p-image-wrapper">
-          <img className="about-p-image" src="joepeanut.jpg" alt="Joe Peanut" />
+          <img
+            className="about-p-image"
+            src="coop-and-jc.jpeg"
+            alt="Joe Peanut"
+          />
         </div>
         <div className="about-p-text-wrapper">
           <h1 className="about-p-text-header">Our story</h1>
@@ -71,7 +75,11 @@ const Main: React.FC = () => {
       <hr />
       <div className="philanthropy-preview">
         <div className="philanthropy-image-wrapper">
-          <img className="philanthropy-image" src="steve.jpg" alt="Steve" />
+          <img
+            className="philanthropy-image"
+            src="70-backyard-concert.jpg"
+            alt="Steve"
+          />
         </div>
         <div className="philanthropy-text-wrapper">
           <h1 className="philanthropy-text-header">Our impact</h1>
