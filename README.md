@@ -1,4 +1,4 @@
-### Northeastern Phi Delta Theta brother-maintained website
+# Northeastern Phi Delta Theta brother-maintained website
 
 [https://nuphidelts.netlify.app/](https://nuphidelts.netlify.app/)
 
