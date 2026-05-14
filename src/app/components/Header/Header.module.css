@@ -1,0 +1,74 @@
+.header {
+  background-color: #0d1433;
+  color: white;
+  height: 6vw;
+  min-height: 60px;
+  max-height: 80px;
+  padding: 0 2vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "TestSohne", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hidden {
+  transform: translateY(-100%);
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo {
+  height: 3vw;
+  min-height: 32px;
+  max-height: 48px;
+  width: auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.5vw, 28px);
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-size: clamp(11px, 1vw, 15px);
+  font-family: "TestSohne", sans-serif;
+  white-space: nowrap;
+  position: relative;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: white;
+  transition: width 0.25s ease;
+}
+
+.navLink:hover {
+  opacity: 1;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}

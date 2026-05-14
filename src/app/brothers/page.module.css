@@ -1,0 +1,80 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+  padding-top: calc(6vw + 2vh);
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4vw;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3vw 0 2vw;
+  gap: 1.5vw;
+}
+
+.sectionImage {
+  max-width: min(60vw, 500px);
+  height: auto;
+  border-radius: 6px;
+}
+
+.sectionTitle {
+  font-family: "TestSohne", sans-serif;
+  font-size: clamp(20px, 3vw, 42px);
+  color: #0d1433;
+  margin: 0;
+  text-align: center;
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  background-color: #0d1433;
+  justify-items: center;
+  align-items: start;
+  padding: 3vw;
+  gap: 3vw;
+}
+
+.gridTwo {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gridThree {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gridFour {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1000px) {
+  .gridTwo {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .gridThree {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gridFour {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .gridTwo,
+  .gridThree,
+  .gridFour {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

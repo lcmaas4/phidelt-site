@@ -1,0 +1,119 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+  padding-top: calc(6vw + 2vh);
+}
+
+/* ── Intro ── */
+.introSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: white;
+  padding: 6vw 10vw;
+}
+
+.introText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 900px;
+  text-align: center;
+}
+
+.introTitle {
+  font-family: "TestSohne", sans-serif;
+  font-size: clamp(20px, 3vw, 44px);
+  color: #0d1433;
+  margin: 0 0 2vw;
+}
+
+.introParagraph {
+  font-family: "TestSohne", sans-serif;
+  font-size: clamp(14px, 1.5vw, 22px);
+  color: #444;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── History ── */
+.historySection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #0d1433;
+  padding: 5vw;
+  gap: 4vw;
+}
+
+.historyText {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  gap: 1.5vw;
+}
+
+.historyTitle {
+  font-family: "TestSohne", sans-serif;
+  font-size: clamp(20px, 3vw, 44px);
+  color: white;
+  margin: 0;
+}
+
+.historyParagraph {
+  font-family: "TestSohne", sans-serif;
+  font-size: clamp(13px, 1.4vw, 20px);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.historyImageWrapper {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.historyImage {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* ── Quote ── */
+.morrisonSection {
+  background-color: #0d1433;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5vw 10vw;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 1.5vw;
+}
+
+.quote {
+  font-family: "TestSohne", sans-serif;
+  font-size: clamp(16px, 2.5vw, 36px);
+  color: white;
+  text-align: center;
+  margin: 0;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.quoteAttribution {
+  font-family: "TestSohne", sans-serif;
+  font-size: clamp(13px, 1.75vw, 24px);
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  text-align: right;
+  width: 100%;
+  max-width: 700px;
+}
