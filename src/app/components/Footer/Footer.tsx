@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "./Footer.module.css";
-import Link from "next/link";
-import Image from "next/image";
+import React from 'react';
+import styles from './Footer.module.css';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Footer: React.FC = () => {
   return (
@@ -31,10 +31,12 @@ const Footer: React.FC = () => {
       </nav>
 
       <p className={styles.copy}>
-        &copy; {new Date().getFullYear()} Phi Delta Theta Massachusetts Epsilon Chapter
+        &copy; {new Date().getFullYear()} Phi Delta Theta Massachusetts Epsilon
+        Chapter
       </p>
       <p className={styles.credit}>
-        Special thanks to Louie Maas #276, Iron Phi #2082, &apos;25
+        Special thanks to Louie Maas #276, Iron Phi #2082, &apos;25 and Liam
+        Lawless #259, &apos;25
       </p>
     </footer>
   );
