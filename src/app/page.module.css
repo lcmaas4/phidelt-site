@@ -1,0 +1,156 @@
+.fatWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+}
+
+.divider {
+  width: 95%;
+  margin: 5% 0;
+  border: none;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* ── Hero ── */
+.aboutPreview {
+  position: relative;
+  min-height: 60vw;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #0d1433;
+}
+
+.aboutPreviewBg {
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.35;
+}
+
+.aboutStuff {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20vw;
+  width: 100%;
+}
+
+.aboutImage {
+  width: 20%;
+  height: auto;
+}
+
+.aboutPreview h1 {
+  margin: 1vw 0 0;
+  font-family: TestSohne, sans-serif;
+  text-align: center;
+  color: white;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+.aboutPreview h3 {
+  margin: 0.5vw 0 0;
+  font-family: TestSohne, sans-serif;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(1rem, 1.75vw, 1.5rem);
+  font-weight: 400;
+}
+
+/* ── Content sections ── */
+.section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  gap: 6%;
+}
+
+.sectionReverse {
+  flex-direction: row-reverse;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 35%;
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.sectionImage {
+  object-fit: cover;
+}
+
+.textWrapper {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5vw;
+}
+
+.sectionHeader {
+  font-family: TestSohne, sans-serif;
+  color: #0d1433;
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  margin: 0;
+}
+
+.sectionText {
+  font-family: TestSohne, sans-serif;
+  color: #333;
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.aboutButton {
+  font-family: TestSohne, sans-serif;
+  color: white;
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  min-height: 44px;
+  border-radius: 5px;
+  background-color: #0d1433;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+}
+
+.aboutButton:hover,
+.aboutButton:focus-visible {
+  background-color: #1a2a5e;
+}
+
+.aboutButton:focus-visible {
+  outline: 2px solid #1a2a5e;
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .section,
+  .sectionReverse {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sectionReverse {
+    flex-direction: column;
+  }
+
+  .imageWrapper,
+  .textWrapper {
+    width: 100%;
+  }
+}

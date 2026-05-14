@@ -1,0 +1,33 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+  padding-top: calc(6vw + 2vh);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6vw 10vw;
+  max-width: 900px;
+}
+
+.title {
+  font-family: TestSohne, sans-serif;
+  font-size: clamp(28px, 4vw, 56px);
+  color: #0d1433;
+  margin: 0 0 1.5vw;
+}
+
+.subtitle {
+  font-family: TestSohne, sans-serif;
+  font-size: clamp(14px, 1.5vw, 22px);
+  color: #444;
+  line-height: 1.6;
+  margin: 0;
+}

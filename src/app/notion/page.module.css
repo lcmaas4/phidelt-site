@@ -1,0 +1,64 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding-top: calc(6vw + 2vh);
+  background-color: white;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25vw;
+  width: 100%;
+  max-width: 480px;
+  padding: 3vw;
+}
+
+.label {
+  font-family: "TestSohne", sans-serif;
+  font-size: clamp(14px, 1.5vw, 20px);
+  color: #0d1433;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.input {
+  width: 100%;
+  padding: 0.6vw 1vw;
+  font-family: "TestSohne", sans-serif;
+  font-size: clamp(13px, 1.1vw, 16px);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input:focus {
+  border-color: #0d1433;
+}
+
+.button {
+  font-family: "TestSohne", sans-serif;
+  font-size: clamp(13px, 1.1vw, 16px);
+  color: white;
+  background-color: #0d1433;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6vw 2.5vw;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #1a2a5e;
+}
+
+.error {
+  font-family: "TestSohne", sans-serif;
+  font-size: clamp(12px, 1vw, 14px);
+  color: #c0392b;
+  margin: 0;
+}
