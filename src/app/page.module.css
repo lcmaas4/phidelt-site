@@ -127,6 +127,29 @@
   transition: background-color 0.2s ease;
 }
 
-.aboutButton:hover {
+.aboutButton:hover,
+.aboutButton:focus-visible {
   background-color: #1a2a5e;
+}
+
+.aboutButton:focus-visible {
+  outline: 2px solid #1a2a5e;
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .section,
+  .sectionReverse {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sectionReverse {
+    flex-direction: column;
+  }
+
+  .imageWrapper,
+  .textWrapper {
+    width: 100%;
+  }
 }

@@ -37,6 +37,7 @@ export default function Home() {
             src="/coop-and-jc.jpeg"
             alt="Brothers"
             fill
+            sizes="(max-width: 600px) 100vw, 35vw"
           />
         </div>
         <div className={styles.textWrapper}>
@@ -77,6 +78,7 @@ export default function Home() {
             src="/our brothers.png"
             alt="Our Brothers"
             fill
+            sizes="(max-width: 600px) 100vw, 35vw"
           />
         </div>
       </div>
@@ -91,6 +93,7 @@ export default function Home() {
             src="/70-backyard-concert.jpg"
             alt="Philanthropy event"
             fill
+            sizes="(max-width: 600px) 100vw, 35vw"
           />
         </div>
         <div className={styles.textWrapper}>
