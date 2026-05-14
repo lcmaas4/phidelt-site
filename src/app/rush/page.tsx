@@ -15,10 +15,10 @@ export default function Rush() {
 
   return (
     <div className={styles.wrapper}>
-      <h3 className={styles.title}>
+      <h1 className={styles.title}>
         Check back at the start of next fall for information on rush. Check out
         our spring &apos;25 rush video below!
-      </h3>
+      </h1>
       <div className={styles.embedWrapper}>
         <blockquote
           className="instagram-media"
