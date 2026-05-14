@@ -1,15 +1,17 @@
 "use client";
 import { useState } from "react";
 import styles from "./page.module.css";
+import { validateNotionPassword } from "./actions";
 
 export default function Notion() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === process.env.NEXT_PUBLIC_NOTION_PASSWORD) {
-      window.location.href = process.env.NEXT_PUBLIC_NOTION_LINK || "/";
+    const result = await validateNotionPassword(password);
+    if (result.success && result.redirectUrl) {
+      window.location.href = result.redirectUrl;
     } else {
       setError(true);
       setPassword("");
@@ -19,10 +21,11 @@ export default function Notion() {
   return (
     <div className={styles.wrapper}>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <label className={styles.label}>
+        <label className={styles.label} htmlFor="notion-password">
           Are you a Phi? Enter the password to access our Notion page.
         </label>
         <input
+          id="notion-password"
           className={styles.input}
           type="password"
           value={password}

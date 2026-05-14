@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1.5vw;
-  font-family: "TestSohne", sans-serif;
+  font-family: TestSohne, sans-serif;
   width: 100%;
 }
 
@@ -39,7 +39,7 @@
   color: #0d1433;
   text-decoration: none;
   font-size: clamp(12px, 1.25vw, 18px);
-  font-family: "TestSohne", sans-serif;
+  font-family: TestSohne, sans-serif;
   padding: 0.4vw 1.2vw;
   border-radius: 5px;
   background-color: white;
@@ -48,9 +48,16 @@
     color 0.2s ease;
 }
 
-.navLink:hover {
+.navLink:hover,
+.navLink:focus,
+.navLink:focus-visible {
   background-color: #0d1433;
   color: white;
+}
+
+.navLink:focus-visible {
+  outline: 2px solid #0d1433;
+  outline-offset: 2px;
 }
 
 .copy {

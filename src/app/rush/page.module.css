@@ -10,7 +10,7 @@
 }
 
 .title {
-  font-family: "TestSohne", sans-serif;
+  font-family: TestSohne, sans-serif;
   font-size: clamp(14px, 1.75vw, 24px);
   font-weight: 400;
   color: #333;

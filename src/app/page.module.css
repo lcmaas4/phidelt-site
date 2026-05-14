@@ -49,7 +49,7 @@
 
 .aboutPreview h1 {
   margin: 1vw 0 0;
-  font-family: "TestSohne", sans-serif;
+  font-family: TestSohne, sans-serif;
   text-align: center;
   color: white;
   font-size: 4vw;
@@ -57,7 +57,7 @@
 
 .aboutPreview h3 {
   margin: 0.5vw 0 0;
-  font-family: "TestSohne", sans-serif;
+  font-family: TestSohne, sans-serif;
   text-align: center;
   color: rgba(255, 255, 255, 0.8);
   font-size: 1.75vw;
@@ -100,14 +100,14 @@
 }
 
 .sectionHeader {
-  font-family: "TestSohne", sans-serif;
+  font-family: TestSohne, sans-serif;
   color: #0d1433;
   font-size: 3.5vw;
   margin: 0;
 }
 
 .sectionText {
-  font-family: "TestSohne", sans-serif;
+  font-family: TestSohne, sans-serif;
   color: #333;
   font-size: 1.5vw;
   line-height: 1.6;
@@ -115,7 +115,7 @@
 }
 
 .aboutButton {
-  font-family: "TestSohne", sans-serif;
+  font-family: TestSohne, sans-serif;
   color: white;
   font-size: 1.5vw;
   text-align: center;

@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
       </nav>
 
       <p className={styles.copy}>
-        &copy; 2025 Phi Delta Theta Massachusetts Epsilon Chapter
+        &copy; {new Date().getFullYear()} Phi Delta Theta Massachusetts Epsilon Chapter
       </p>
       <p className={styles.credit}>
         Special thanks to Louie Maas #276, Iron Phi #2082, &apos;25

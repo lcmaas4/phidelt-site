@@ -36,6 +36,7 @@ const Header: React.FC = () => {
           href="https://www.instagram.com/phideltneu"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Visit our Instagram"
         >
           <FaInstagram size={18} />
         </Link>

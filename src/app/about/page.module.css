@@ -26,14 +26,14 @@
 }
 
 .introTitle {
-  font-family: "TestSohne", sans-serif;
+  font-family: TestSohne, sans-serif;
   font-size: clamp(20px, 3vw, 44px);
   color: #0d1433;
   margin: 0 0 2vw;
 }
 
 .introParagraph {
-  font-family: "TestSohne", sans-serif;
+  font-family: TestSohne, sans-serif;
   font-size: clamp(14px, 1.5vw, 22px);
   color: #444;
   line-height: 1.7;
@@ -59,14 +59,14 @@
 }
 
 .historyTitle {
-  font-family: "TestSohne", sans-serif;
+  font-family: TestSohne, sans-serif;
   font-size: clamp(20px, 3vw, 44px);
   color: white;
   margin: 0;
 }
 
 .historyParagraph {
-  font-family: "TestSohne", sans-serif;
+  font-family: TestSohne, sans-serif;
   font-size: clamp(13px, 1.4vw, 20px);
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.7;
@@ -99,7 +99,7 @@
 }
 
 .quote {
-  font-family: "TestSohne", sans-serif;
+  font-family: TestSohne, sans-serif;
   font-size: clamp(16px, 2.5vw, 36px);
   color: white;
   text-align: center;
@@ -109,7 +109,7 @@
 }
 
 .quoteAttribution {
-  font-family: "TestSohne", sans-serif;
+  font-family: TestSohne, sans-serif;
   font-size: clamp(13px, 1.75vw, 24px);
   color: rgba(255, 255, 255, 0.7);
   margin: 0;

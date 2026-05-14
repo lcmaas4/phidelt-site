@@ -21,7 +21,6 @@ export default function Home() {
             alt="Phi Delta Theta logo without letters"
             width={300}
             height={300}
-            priority
           />
           <h1>Northeastern University</h1>
           <h3>Friendship - Sound Learning - Rectitude</h3>

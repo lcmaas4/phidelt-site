@@ -193,7 +193,7 @@ export const classes: Class[] = [
       { name: "Marty Graw", src: "/composites/333graw.jpg", alt: "Graw" },
       { name: "Etienne Groom", src: "/composites/332groom.jpg", alt: "Groom" },
       {
-        name: "Jake Queefner",
+        name: "Jake Eisner",
         src: "/composites/331eisner.jpg",
         alt: "Eisner",
       },

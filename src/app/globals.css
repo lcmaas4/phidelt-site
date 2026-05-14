@@ -4,8 +4,9 @@
 }
 
 @font-face {
-  font-family: "TestSohne";
+  font-family: TestSohne;
   src: url("/fonts/TestSohne-Kraftig-BF663d89cd37e26.otf") format("opentype");
+  font-display: swap;
 }
 
 @media (prefers-color-scheme: dark) {

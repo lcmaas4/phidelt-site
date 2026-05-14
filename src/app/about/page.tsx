@@ -29,7 +29,7 @@ export default function About() {
       {/* History */}
       <section className={styles.historySection}>
         <div className={styles.historyText}>
-          <h1 className={styles.historyTitle}>Our History</h1>
+          <h2 className={styles.historyTitle}>Our History</h2>
           <p className={styles.historyParagraph}>
             On December 26th, 1848, Robert Morrison, John McMillan Wilson, and
             four classmates, known as the &quot;Immortal Six,&quot; founded Phi
