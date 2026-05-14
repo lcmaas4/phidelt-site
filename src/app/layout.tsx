@@ -26,7 +26,7 @@ export default function RootLayout({
       <body>
         <Header />
         <div className="header-spacer" />
-        {children}
+        <main role="main">{children}</main>
         <Footer />
       </body>
     </html>

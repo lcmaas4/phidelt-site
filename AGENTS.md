@@ -5,9 +5,11 @@ This document describes the AI agents configured for this project, their respons
 ## Agent: Next.js Development Agent
 
 ### Purpose
+
 Assists with Next.js-specific development tasks, including routing, components, and framework-specific features.
 
 ### Responsibilities
+
 - Next.js app router configuration and optimization
 - Server and client component implementation
 - Image optimization and font loading
@@ -15,21 +17,27 @@ Assists with Next.js-specific development tasks, including routing, components, 
 - Build configuration and deployment guidance
 
 ### Important Constraints
+
 <!-- BEGIN:nextjs-agent-rules -->
+
 **This is NOT the Next.js you know**
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide at https://nextjs.org/docs before writing any code. Heed deprecation notices.
+
 <!-- END:nextjs-agent-rules -->
 
 ### Expected Inputs/Outputs
+
 - **Input**: Feature requests, bug reports, code improvement suggestions
 - **Output**: Code changes, configuration updates, implementation guidance
 
 ### Lifecycle
+
 - Activated on-demand for Next.js-specific tasks
 - No persistent state between invocations
 
 ### Contact
+
 Refer to repository maintainers listed in package.json
 
 ---

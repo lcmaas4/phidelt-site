@@ -1,6 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
-import styles from "./page.module.css";
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from './page.module.css';
 
 export default function Home() {
   return (
@@ -40,7 +40,7 @@ export default function Home() {
           />
         </div>
         <div className={styles.textWrapper}>
-          <h1 className={styles.sectionHeader}>Our story</h1>
+          <h2 className={styles.sectionHeader}>Our story</h2>
           <p className={styles.sectionText}>
             Founded with the bold vision of helping its brothers &quot;become
             the greatest version of themselves,&quot; the Massachusetts Epsilon
@@ -60,7 +60,7 @@ export default function Home() {
       {/* Our Brothers */}
       <div className={`${styles.section} ${styles.sectionReverse}`}>
         <div className={styles.textWrapper}>
-          <h1 className={styles.sectionHeader}>Our brothers</h1>
+          <h2 className={styles.sectionHeader}>Our brothers</h2>
           <p className={styles.sectionText}>
             Our brothers are a diverse group of individuals who come together to
             form a close-knit community. We are united by our shared values of
@@ -94,7 +94,7 @@ export default function Home() {
           />
         </div>
         <div className={styles.textWrapper}>
-          <h1 className={styles.sectionHeader}>Our impact</h1>
+          <h2 className={styles.sectionHeader}>Our impact</h2>
           <p className={styles.sectionText}>
             We find deep fulfillment in offering our support to the
             underprivileged. Our chapter regularly conducts philanthropic work,

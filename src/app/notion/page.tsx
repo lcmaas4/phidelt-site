@@ -1,20 +1,26 @@
-"use client";
-import { useState } from "react";
-import styles from "./page.module.css";
-import { validateNotionPassword } from "./actions";
+'use client';
+import { useState } from 'react';
+import styles from './page.module.css';
+import { validateNotionPassword } from './actions';
 
 export default function Notion() {
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const result = await validateNotionPassword(password);
-    if (result.success && result.redirectUrl) {
-      window.location.href = result.redirectUrl;
-    } else {
+    try {
+      const result = await validateNotionPassword(password);
+      if (result.success && result.redirectUrl) {
+        window.location.href = result.redirectUrl;
+      } else {
+        setError(true);
+        setPassword('');
+      }
+    } catch (error) {
+      console.error('Error validating password:', error);
       setError(true);
-      setPassword("");
+      setPassword('');
     }
   };
 
