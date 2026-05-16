@@ -98,7 +98,8 @@
   color: #1d4ed8;
   text-decoration: none;
   font-size: clamp(0.95rem, 1vw, 1rem);
-  word-break: break-word;
+  word-break: normal;
+  overflow-wrap: anywhere;
 }
 
 .contactItem a:hover,
