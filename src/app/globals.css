@@ -1,6 +1,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --header-height: 80px;
 }
 
 @font-face {
@@ -49,7 +50,7 @@ a {
 }
 
 .header-spacer {
-  height: 80px;
+  height: var(--header-height);
 }
 
 @media (prefers-color-scheme: dark) {

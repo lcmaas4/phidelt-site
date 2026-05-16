@@ -3,7 +3,7 @@
   color: white;
   height: 6vw;
   min-height: 60px;
-  max-height: 80px;
+  max-height: var(--header-height);
   padding: 0 2vw;
   display: flex;
   justify-content: space-between;
@@ -55,7 +55,7 @@
 }
 
 .navLink::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -3px;
   left: 0;
