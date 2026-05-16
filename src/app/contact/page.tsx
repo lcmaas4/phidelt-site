@@ -10,12 +10,6 @@ export default function ContactPage() {
       </p>
 
       <section className={styles.content}>
-        <h2 className={styles.sectionTitle}>Contact Information</h2>
-        <p className={styles.intro}>
-          Have questions or need assistance? Get in touch with the right person
-          below!
-        </p>
-
         <div className={styles.contactList}>
           <div className={styles.contactItem}>
             <strong>President:</strong>
