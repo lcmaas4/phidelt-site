@@ -1,9 +1,53 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Image from 'next/image';
+import styles from './page.module.css';
+
+type Activity = {
+  title: string;
+  description: string;
+  imageSrc?: string;
+  imageAlt?: string;
+};
+
+const activities: Activity[] = [
+  {
+    title: 'Academics',
+    imageSrc: '/about-academics.jpg',
+    imageAlt: 'Brothers studying together',
+    description:
+      'At Northeastern University, we’re here to pursue our academic and professional ambitions, and our fraternity plays a key role in keeping us on track. With the support of our scholarship chairmen, we stay focused on our studies and work to achieve success both in the classroom and beyond.',
+  },
+  {
+    title: 'Social Events',
+    imageSrc: '/about-social.jpg',
+    imageAlt: 'Brothers at a social event',
+    description:
+      'We strive to build strong connections with sororities and campus organizations through social events such as mixers and formals. These gatherings build friendships, create memories, and strengthen our Greek community.',
+  },
+  {
+    title: 'Philanthropy',
+    imageSrc: '/about-philo.jpg',
+    imageAlt: 'Brothers volunteering together',
+    description:
+      'We make it our duty to support those who have been less fortunate than ourselves. As such, our chapter regularly conducts philanthropic work, particularly in support of the LiveLikeLou Foundation to fund ALS research.',
+  },
+];
 
 export default function About() {
   return (
     <div className={styles.wrapper}>
+      {/* Hero */}
+      <section className={styles.heroSection}>
+        <Image
+          src="/exec-spring-25.jpg"
+          alt="About us background"
+          fill
+          priority
+          className={styles.heroImage}
+        />
+        <div className={styles.heroOverlay} />
+        <h1 className={styles.heroTitle}>About us</h1>
+      </section>
+
       {/* Intro */}
       <section className={styles.introSection}>
         <div className={styles.introText}>
@@ -59,7 +103,102 @@ export default function About() {
             width={600}
             height={450}
             className={styles.historyImage}
+            loading="eager"
           />
+        </div>
+      </section>
+
+      {/* Brotherhood */}
+      <section className={styles.brotherhoodSection}>
+        <div className={styles.sectionContainer}>
+          <div className={styles.brotherhoodContent}>
+            <div className={styles.brotherhoodImageWrapper}>
+              <div className={styles.brotherhoodGrid}>
+                <div className={styles.brotherhoodTile} aria-hidden="true">
+                  <Image
+                    src="/about-brotherhood1.jpg"
+                    alt="Brotherhood photo"
+                    fill
+                    className={styles.brotherhoodImage}
+                    sizes="(max-width: 900px) 100vw, 19vw"
+                  />
+                </div>
+                <div className={styles.brotherhoodTile} aria-hidden="true">
+                  <Image
+                    src="/about-brotherhood2.jpg"
+                    alt="Brotherhood photo"
+                    fill
+                    className={styles.brotherhoodImage}
+                    sizes="(max-width: 900px) 100vw, 19vw"
+                  />
+                </div>
+                <div className={styles.brotherhoodTile} aria-hidden="true">
+                  <Image
+                    src="/about-brotherhood3.png"
+                    alt="Brotherhood photo"
+                    fill
+                    className={styles.brotherhoodImage}
+                    sizes="(max-width: 900px) 100vw, 19vw"
+                  />
+                </div>
+                <div className={styles.brotherhoodTile} aria-hidden="true">
+                  <Image
+                    src="/about-brotherhood4.jpg"
+                    alt="Brotherhood photo"
+                    fill
+                    className={styles.brotherhoodImage}
+                    sizes="(max-width: 900px) 100vw, 19vw"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className={styles.brotherhoodText}>
+              <h2 className={styles.sectionHeading}>The Brotherhood</h2>
+              <p className={styles.sectionCopy}>
+                True brotherhood is at the core of everything we do. It&apos;s
+                about building lasting relationships, pushing each other to be
+                our best selves, and offering support through life&apos;s ups
+                and downs. In our fraternity, brotherhood means being there for
+                one another, both in moments of celebration and challenge. With
+                a foundation built on trust and mutual respect, we form
+                connections that stand the test of time, united by a shared
+                sense of purpose and loyalty.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Activities */}
+      <section className={styles.activitiesSection}>
+        <div className={styles.sectionContainer}>
+          <h2 className={styles.sectionHeading}>Activities</h2>
+          <div className={styles.activitiesGrid}>
+            {activities.map((activity) => (
+              <article key={activity.title} className={styles.activityCard}>
+                <div className={styles.activityImageSlot} aria-hidden="true">
+                  {activity.imageSrc ? (
+                    <Image
+                      src={activity.imageSrc}
+                      alt={activity.imageAlt ?? activity.title}
+                      fill
+                      className={styles.activityImage}
+                      sizes="(max-width: 900px) 100vw, 33vw"
+                      loading={
+                        activity.title === 'Philanthropy' ? 'eager' : undefined
+                      }
+                    />
+                  ) : (
+                    <span className={styles.activityImageText}>
+                      Image space
+                    </span>
+                  )}
+                </div>
+                <h3 className={styles.activityTitle}>{activity.title}</h3>
+                <p className={styles.activityCopy}>{activity.description}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
