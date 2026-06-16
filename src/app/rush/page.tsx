@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Hero from "../components/Hero/Hero";
 import styles from "./page.module.css";
@@ -11,17 +10,18 @@ export default function Rush() {
         imageSrc="/rush-bg.jpg"
         imageAlt="Rush background"
       />
-      <h1 className={styles.title}>
+      <h2 className={styles.title}>
         Check back at the start of next fall for information on rush. Check out
         our past rush videos below!
-      </h1>
+      </h2>
       <div className={styles.videoGrid}>
         <div className={styles.videoWrapper}>
           <video 
             className={styles.video}
             controls 
             autoPlay 
-            muted 
+            muted
+            preload="metadata"
             loop 
             playsInline
           >
@@ -34,8 +34,7 @@ export default function Rush() {
           <video 
             className={styles.video}
             controls 
-            autoPlay 
-            muted 
+            preload="metadata"
             loop 
             playsInline
           >
@@ -48,8 +47,7 @@ export default function Rush() {
           <video 
             className={styles.video}
             controls 
-            autoPlay 
-            muted 
+            preload="metadata"
             loop 
             playsInline
           >

@@ -128,7 +128,7 @@ export const council: Brother[] = [
     name: 'Varnit Dutta',
     role: 'DEI Chairman',
     src: '',
-    alt: 'Varnit',
+    alt: 'Dutta',
   },
   {
     name: 'Mitchell Petrecca',
