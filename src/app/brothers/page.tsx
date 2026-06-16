@@ -1,24 +1,22 @@
-import Image from "next/image";
-import BrotherCard from "../components/BrotherCard/BrotherCard";
-import { execBoard, council, classes } from "./brothersData";
-import styles from "./page.module.css";
+import BrotherCard from '../components/BrotherCard/BrotherCard';
+import Hero from '../components/Hero/Hero';
+import { execBoard, council, classes } from './brothersData';
+import styles from './page.module.css';
 
 export default function Brothers() {
   return (
     <div className={styles.wrapper}>
+      <Hero
+        title="Our Brothers"
+        imageSrc="/brothers-bg.jpg"
+        imageAlt="Phi Delta Theta Brothers"
+      />
       {/* Executive Board */}
       <section className={styles.section}>
         <div className={styles.sectionHeader}>
-          <Image
-            src="/exec-spring-25.jpg"
-            alt="Exec Board"
-            width={500}
-            height={400}
-            className={styles.sectionImage}
-          />
           <h1 className={styles.sectionTitle}>Executive Board</h1>
         </div>
-        <div className={`${styles.grid} ${styles.gridTwo}`}>
+        <div className={`${styles.grid} ${styles.gridThree}`}>
           {execBoard.map((b) => (
             <BrotherCard key={b.name} {...b} />
           ))}
@@ -28,13 +26,6 @@ export default function Brothers() {
       {/* Council */}
       <section className={styles.section}>
         <div className={styles.sectionHeader}>
-          <Image
-            src="/nuphidelts-logo.png"
-            alt="Phi Delta Theta"
-            width={200}
-            height={200}
-            className={styles.sectionImage}
-          />
           <h1 className={styles.sectionTitle}>Council</h1>
         </div>
         <div className={`${styles.grid} ${styles.gridThree}`}>
@@ -45,20 +36,18 @@ export default function Brothers() {
       </section>
 
       {/* Brothers by class */}
-      <section className={styles.section}>
-        {classes.map((cls) => (
-          <div key={cls.symbol}>
-            <div className={styles.sectionHeader}>
-              <h1 className={styles.sectionTitle}>{cls.symbol}</h1>
-            </div>
-            <div className={`${styles.grid} ${styles.gridFour}`}>
-              {cls.brothers.map((b) => (
-                <BrotherCard key={b.name + b.src} {...b} />
-              ))}
-            </div>
+      {classes.map((cls) => (
+        <section key={cls.symbol} className={styles.section}>
+          <div className={styles.sectionHeader}>
+            <h1 className={styles.sectionTitle}>{cls.symbol}</h1>
           </div>
-        ))}
-      </section>
+          <div className={`${styles.grid} ${styles.gridFour}`}>
+            {cls.brothers.map((b) => (
+              <BrotherCard key={b.name} {...b} />
+            ))}
+          </div>
+        </section>
+      ))}
     </div>
   );
 }
