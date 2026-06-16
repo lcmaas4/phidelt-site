@@ -78,19 +78,14 @@
 }
 
 /* ── Brotherhood + Activities ── */
-.brotherhoodSection,
 .activitiesSection {
-  background-color: white;
+  background-color: #eaf3ff;
   padding: 6vw 8vw;
 }
 
 .brotherhoodSection {
   background-color: white;
   padding: 5vw;
-}
-
-.activitiesSection {
-  background-color: #eaf3ff;
 }
 
 .sectionContainer {
@@ -173,40 +168,6 @@
 
 .brotherhoodImage {
   object-fit: cover;
-}
-
-@media (max-width: 900px) {
-  .brotherhoodContent {
-    flex-direction: column;
-  }
-
-  .brotherhoodImageWrapper {
-    order: 2;
-    width: 100%;
-  }
-
-  .brotherhoodText {
-    order: 1;
-    width: 100%;
-  }
-
-  .brotherhoodGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .historySection {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .historyText,
-  .historyImageWrapper {
-    width: 100%;
-  }
-
-  .historyText {
-    gap: 1rem;
-  }
 }
 
 .activitiesGrid {
@@ -342,6 +303,24 @@
 }
 
 @media (max-width: 900px) {
+  .brotherhoodContent {
+    flex-direction: column;
+  }
+
+  .brotherhoodImageWrapper {
+    order: 2;
+    width: 100%;
+  }
+
+  .brotherhoodText {
+    order: 1;
+    width: 100%;
+  }
+
+  .brotherhoodGrid {
+    grid-template-columns: 1fr;
+  }
+
   .activitiesGrid {
     grid-template-columns: 1fr;
   }

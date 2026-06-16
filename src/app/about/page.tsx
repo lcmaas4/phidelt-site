@@ -6,6 +6,7 @@ type Activity = {
   description: string;
   imageSrc?: string;
   imageAlt?: string;
+  priority?: boolean;
 };
 
 const activities: Activity[] = [
@@ -27,6 +28,7 @@ const activities: Activity[] = [
     title: 'Philanthropy',
     imageSrc: '/about-philo.jpg',
     imageAlt: 'Brothers volunteering together',
+    priority: true,
     description:
       'We make it our duty to support those who have been less fortunate than ourselves. As such, our chapter regularly conducts philanthropic work, particularly in support of the LiveLikeLou Foundation to fund ALS research.',
   },
@@ -43,6 +45,7 @@ export default function About() {
           fill
           priority
           className={styles.heroImage}
+          sizes="100vw"
         />
         <div className={styles.heroOverlay} />
         <h1 className={styles.heroTitle}>About us</h1>
@@ -185,7 +188,7 @@ export default function About() {
                       className={styles.activityImage}
                       sizes="(max-width: 900px) 100vw, 33vw"
                       loading={
-                        activity.title === 'Philanthropy' ? 'eager' : undefined
+                        activity.priority ? 'eager' : undefined
                       }
                     />
                   ) : (
