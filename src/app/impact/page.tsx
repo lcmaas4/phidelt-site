@@ -47,7 +47,7 @@ export default function Impact() {
                 />
               </Link>
               <Link
-                href="http://www.ironphi.org/"
+                href="https://support.ironphi.org/site/PageServer"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.logoWrapper}
