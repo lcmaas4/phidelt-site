@@ -10,11 +10,29 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
-    const handleScroll = () => {
-      setIsHidden(window.scrollY > lastScrollY);
-      lastScrollY = window.scrollY;
+    
+    // Get dynamic threshold from CSS variable
+    const getThreshold = () => {
+      const height = getComputedStyle(document.documentElement)
+        .getPropertyValue('--header-height')
+        .trim();
+      return parseInt(height, 10) || 80;
     };
-    window.addEventListener('scroll', handleScroll);
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const threshold = getThreshold();
+      
+      // Keep header visible at the top (within dynamic threshold)
+      if (currentScrollY < threshold) {
+        setIsHidden(false);
+      } else {
+        setIsHidden(currentScrollY > lastScrollY);
+      }
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

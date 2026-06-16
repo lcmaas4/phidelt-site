@@ -1,0 +1,46 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 56vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+  filter: blur(8px);
+  transform: scale(1.1);
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.title {
+  position: relative;
+  z-index: 2;
+  font-family: TestSohne, sans-serif;
+  font-size: clamp(36px, 8vw, 84px);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    height: 23vh;
+  }
+  
+  .title {
+    font-size: clamp(32px, 12vw, 48px);
+  }
+}

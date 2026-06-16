@@ -1,9 +1,7 @@
 .header {
   background-color: #0d1433;
   color: white;
-  height: 6vw;
-  min-height: 60px;
-  max-height: var(--header-height);
+  height: var(--header-height);
   padding: 0 2vw;
   display: flex;
   justify-content: space-between;

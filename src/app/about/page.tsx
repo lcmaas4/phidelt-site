@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Hero from '../components/Hero/Hero';
 import styles from './page.module.css';
 
 type Activity = {
@@ -30,7 +31,7 @@ const activities: Activity[] = [
     imageAlt: 'Brothers volunteering together',
     priority: true,
     description:
-      'We make it our duty to support those who have been less fortunate than ourselves. As such, our chapter regularly conducts philanthropic work, particularly in support of the LiveLikeLou Foundation to fund ALS research.',
+      'We make it our duty to support those in need. As such, our chapter regularly conducts philanthropic work, particularly in support of the LiveLikeLou Foundation to fund ALS research.',
   },
 ];
 
@@ -38,18 +39,11 @@ export default function About() {
   return (
     <div className={styles.wrapper}>
       {/* Hero */}
-      <section className={styles.heroSection}>
-        <Image
-          src="/exec-spring-25.jpg"
-          alt="About us background"
-          fill
-          priority
-          className={styles.heroImage}
-          sizes="100vw"
-        />
-        <div className={styles.heroOverlay} />
-        <h1 className={styles.heroTitle}>About us</h1>
-      </section>
+      <Hero
+        title="About us"
+        imageSrc="/exec-spring-25.jpg"
+        imageAlt="About us background"
+      />
 
       {/* Intro */}
       <section className={styles.introSection}>
@@ -187,9 +181,7 @@ export default function About() {
                       fill
                       className={styles.activityImage}
                       sizes="(max-width: 900px) 100vw, 33vw"
-                      loading={
-                        activity.priority ? 'eager' : undefined
-                      }
+                      loading={activity.priority ? 'eager' : undefined}
                     />
                   ) : (
                     <span className={styles.activityImageText}>
@@ -203,17 +195,6 @@ export default function About() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Quote */}
-      <section className={styles.morrisonSection}>
-        <blockquote className={styles.quote}>
-          &ldquo;To do what ought to be done but would not have been done unless
-          I did it, I thought to be my duty.&rdquo;
-        </blockquote>
-        <p className={styles.quoteAttribution}>
-          — Robert Morrison, Phi Delta Theta Founder
-        </p>
       </section>
     </div>
   );

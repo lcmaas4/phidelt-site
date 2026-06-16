@@ -1,33 +1,336 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
   background-color: white;
-  padding-top: calc(6vw + 2vh);
 }
 
-.hero {
+/* ── Philanthropy ── */
+.philoSection {
+  background-color: white;
+  padding: 8vw 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sectionContainer {
+  max-width: 1180px;
+  width: 100%;
+}
+
+.philoContent {
+  display: flex;
+  gap: 6vw;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.philoText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sectionCopy {
+  font-family: TestSohne, sans-serif;
+  font-size: clamp(15px, 1.6vw, 22px);
+  color: #333;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.textLink {
+  color: #0d1433;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.textLink:hover {
+  opacity: 0.7;
+}
+
+.logoGrid {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoImage {
+  height: auto;
+  max-width: 240px;
+  transition: transform 0.3s ease;
+}
+
+.logoImage:hover {
+  transform: scale(1.05);
+}
+
+/* ── Community Service ── */
+.serviceSection {
+  background-color: #eaf3ff;
+  padding: 8vw 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.serviceContent {
+  display: flex;
+  gap: 6vw;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.serviceText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.serviceText .introTitle {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.serviceImageWrapper {
+  flex: 0 1 45%;
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.serviceImage {
+  object-fit: cover;
+}
+
+/* ── Philanthropy Week ── */
+.philoWeekSection {
+  background-color: white;
+  padding: 8vw 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.philoWeekContent {
+  display: flex;
+  gap: 6vw;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.philoWeekText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.philoWeekText .introTitle {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.philoWeekImageWrapper {
+  flex: 0 1 45%;
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.philoWeekImage {
+  object-fit: cover;
+}
+
+/* ── Our Events ── */
+.eventsSection {
+  background-color: #eaf3ff;
+  padding: 8vw 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eventsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 6vw;
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.eventItem {
+  display: flex;
+  align-items: center;
+  gap: 6vw;
+  width: 100%;
+}
+
+.eventItem:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.eventText {
+  flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.eventTitle {
+  font-family: TestSohne, sans-serif;
+  font-size: clamp(20px, 2.5vw, 36px);
+  color: #0d1433;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.eventImageWrapper {
+  flex: 0 1 45%;
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.eventImage {
+  object-fit: cover;
+}
+
+.eventImagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(13, 20, 51, 0.05);
+  border: 1px dashed rgba(13, 20, 51, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(13, 20, 51, 0.4);
+  font-family: TestSohne, sans-serif;
+}
+
+@media (max-width: 900px) {
+  .eventItem,
+  .eventItem:nth-child(even) {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .eventText {
+    align-items: center;
+    text-align: center;
+  }
+
+  .eventImageWrapper {
+    width: 100%;
+  }
+}
+
+/* ── Quote ── */
+.morrisonSection {
+  background-color: #0d1433;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 5vw 10vw;
+  gap: 1.5vw;
+}
+
+.quote {
+  font-family: TestSohne, sans-serif;
+  font-size: clamp(16px, 2.5vw, 36px);
+  color: white;
   text-align: center;
-  padding: 6vw 10vw;
-  max-width: 900px;
-}
-
-.title {
-  font-family: TestSohne, sans-serif;
-  font-size: clamp(28px, 4vw, 56px);
-  color: #0d1433;
-  margin: 0 0 1.5vw;
-}
-
-.subtitle {
-  font-family: TestSohne, sans-serif;
-  font-size: clamp(14px, 1.5vw, 22px);
-  color: #444;
-  line-height: 1.6;
   margin: 0;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.quoteAttribution {
+  font-family: TestSohne, sans-serif;
+  font-size: clamp(13px, 1.75vw, 24px);
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 auto;
+  text-align: right;
+  width: 100%;
+  max-width: 850px;
+}
+
+.introTitle {
+  font-family: TestSohne, sans-serif;
+  font-size: clamp(20px, 3vw, 44px);
+  color: #0d1433;
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .eventsGrid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .serviceContent,
+  .philoWeekContent,
+  .philoContent {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .serviceText,
+  .philoWeekText,
+  .philoText {
+    align-items: center;
+    text-align: center;
+  }
+
+  .serviceText .introTitle,
+  .philoWeekText .introTitle,
+  .introTitle {
+    text-align: center;
+  }
+
+  .serviceImageWrapper,
+  .philoWeekImageWrapper {
+    width: 100%;
+    order: 2;
+  }
+
+  .logoGrid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .logoImage {
+    max-width: 180px;
+  }
 }
