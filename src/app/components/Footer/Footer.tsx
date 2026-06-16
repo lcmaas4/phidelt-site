@@ -13,6 +13,7 @@ const Footer: React.FC = () => {
           width={160}
           height={64}
           className={styles.logo}
+          style={{ width: 'auto' }}
         />
       </Link>
 

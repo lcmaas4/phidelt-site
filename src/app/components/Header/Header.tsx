@@ -1,9 +1,9 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import styles from "./Header.module.css";
-import Link from "next/link";
-import Image from "next/image";
-import { FaInstagram } from "react-icons/fa";
+'use client';
+import React, { useState, useEffect } from 'react';
+import styles from './Header.module.css';
+import Link from 'next/link';
+import Image from 'next/image';
+import { FaInstagram } from 'react-icons/fa';
 
 const Header: React.FC = () => {
   const [isHidden, setIsHidden] = useState(false);
@@ -14,12 +14,12 @@ const Header: React.FC = () => {
       setIsHidden(window.scrollY > lastScrollY);
       lastScrollY = window.scrollY;
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <header className={`${styles.header} ${isHidden ? styles.hidden : ""}`}>
+    <header className={`${styles.header} ${isHidden ? styles.hidden : ''}`}>
       <Link href="/" className={styles.logoWrapper}>
         <Image
           src="/white logo no letters.png"
@@ -28,6 +28,7 @@ const Header: React.FC = () => {
           height={64}
           className={styles.logo}
           priority
+          style={{ width: 'auto' }}
         />
       </Link>
       <nav className={styles.nav}>

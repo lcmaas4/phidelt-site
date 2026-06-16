@@ -3,7 +3,44 @@
   flex-direction: column;
   width: 100%;
   background-color: white;
-  padding-top: calc(6vw + 2vh);
+}
+
+/* ── Hero ── */
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+  filter: blur(8px);
+  transform: scale(1.1);
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.heroTitle {
+  position: relative;
+  z-index: 2;
+  font-family: TestSohne, sans-serif;
+  font-size: clamp(36px, 8vw, 84px);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0;
 }
 
 /* ── Intro ── */
@@ -11,7 +48,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 60vh;
   background-color: white;
   padding: 6vw 10vw;
 }
@@ -37,6 +74,153 @@
   font-size: clamp(14px, 1.5vw, 22px);
   color: #444;
   line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Brotherhood + Activities ── */
+.activitiesSection {
+  background-color: #eaf3ff;
+  padding: 6vw 8vw;
+}
+
+.brotherhoodSection {
+  background-color: white;
+  padding: 5vw;
+}
+
+.sectionContainer {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.sectionHeading {
+  font-family: TestSohne, sans-serif;
+  font-size: clamp(22px, 3vw, 44px);
+  color: #0d1433;
+  margin: 0;
+  text-align: center;
+}
+
+.sectionCopy {
+  font-family: TestSohne, sans-serif;
+  font-size: clamp(14px, 1.45vw, 20px);
+  color: #333;
+  line-height: 1.8;
+  margin: 1.5rem 0 0;
+  max-width: 980px;
+}
+
+.brotherhoodSection .sectionHeading {
+  color: #0d1433;
+}
+
+.brotherhoodSection .sectionCopy {
+  color: #333;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.brotherhoodSection .sectionContainer {
+  text-align: center;
+  max-width: none;
+  width: 100%;
+}
+
+.brotherhoodContent {
+  display: flex;
+  gap: 4vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.brotherhoodText {
+  flex: 0 1 44%;
+  text-align: left;
+}
+
+.brotherhoodImageWrapper {
+  flex: 0 1 46%;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.brotherhoodGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.brotherhoodTile {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  border: 1px solid #d8dbe6;
+  background:
+    linear-gradient(135deg, rgba(13, 20, 51, 0.06), rgba(13, 20, 51, 0.12)),
+    #f5f7fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.brotherhoodImage {
+  object-fit: cover;
+}
+
+.activitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.activityCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.activityImageSlot {
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  border: 1px solid #d8dbe6;
+  background:
+    linear-gradient(135deg, rgba(13, 20, 51, 0.06), rgba(13, 20, 51, 0.12)),
+    #f5f7fb;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.activityImage {
+  object-fit: cover;
+}
+
+.activityImageText {
+  font-family: TestSohne, sans-serif;
+  font-size: clamp(12px, 1.1vw, 15px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(13, 20, 51, 0.55);
+}
+
+.activityTitle {
+  font-family: TestSohne, sans-serif;
+  font-size: clamp(18px, 2vw, 28px);
+  color: #0d1433;
+  margin: 0;
+}
+
+.activityCopy {
+  font-family: TestSohne, sans-serif;
+  font-size: clamp(13px, 1.35vw, 18px);
+  color: #444;
+  line-height: 1.75;
   margin: 0;
 }
 
@@ -116,4 +300,42 @@
   text-align: right;
   width: 100%;
   max-width: 700px;
+}
+
+@media (max-width: 900px) {
+  .brotherhoodContent {
+    flex-direction: column;
+  }
+
+  .brotherhoodImageWrapper {
+    order: 2;
+    width: 100%;
+  }
+
+  .brotherhoodText {
+    order: 1;
+    width: 100%;
+  }
+
+  .brotherhoodGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .activitiesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .historySection {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .historyText,
+  .historyImageWrapper {
+    width: 100%;
+  }
+
+  .historyText {
+    gap: 1rem;
+  }
 }
