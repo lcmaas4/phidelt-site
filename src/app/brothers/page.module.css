@@ -3,8 +3,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background-color: white;
-  padding-top: calc(6vw + 2vh);
+  background-color: #0d1433;
 }
 
 .section {
@@ -12,29 +11,37 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 4vw;
+  margin-bottom: 0;
+}
+
+.section:last-of-type {
+  margin-bottom: 0;
 }
 
 .sectionHeader {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3vw 0 2vw;
+  padding: 2vw 0 1vw;
   gap: 1.5vw;
+  width: 100%;
 }
 
 .sectionImage {
   max-width: min(60vw, 500px);
   height: auto;
   border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .sectionTitle {
   font-family: "TestSohne", sans-serif;
   font-size: clamp(20px, 3vw, 42px);
-  color: #0d1433;
+  color: white;
   margin: 0;
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .grid {
@@ -43,7 +50,7 @@
   background-color: #0d1433;
   justify-items: center;
   align-items: start;
-  padding: 3vw;
+  padding: 2vw 3vw 3vw;
   gap: 3vw;
 }
 
