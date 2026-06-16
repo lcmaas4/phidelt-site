@@ -44,9 +44,3 @@
   opacity: 0.8;
   font-weight: 400;
 }
-
-/* Remove hover effect as per user request */
-.card:hover .info {
-  transform: none;
-  opacity: 1;
-}

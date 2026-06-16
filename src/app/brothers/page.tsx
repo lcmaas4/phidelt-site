@@ -1,8 +1,7 @@
-import Image from "next/image";
-import BrotherCard from "../components/BrotherCard/BrotherCard";
-import Hero from "../components/Hero/Hero";
-import { execBoard, council, classes } from "./brothersData";
-import styles from "./page.module.css";
+import BrotherCard from '../components/BrotherCard/BrotherCard';
+import Hero from '../components/Hero/Hero';
+import { execBoard, council, classes } from './brothersData';
+import styles from './page.module.css';
 
 export default function Brothers() {
   return (
@@ -44,7 +43,7 @@ export default function Brothers() {
           </div>
           <div className={`${styles.grid} ${styles.gridFour}`}>
             {cls.brothers.map((b) => (
-              <BrotherCard key={b.name + b.src} {...b} />
+              <BrotherCard key={b.name} {...b} />
             ))}
           </div>
         </section>
