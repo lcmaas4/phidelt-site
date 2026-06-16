@@ -60,7 +60,7 @@ export default function Home() {
       <hr className={styles.divider} />
 
       {/* Our Brothers */}
-      <div className={styles.section}>
+      <div className={`${styles.section} ${styles.sectionMobileReverse}`}>
         <div className={styles.textWrapper}>
           <h2 className={styles.sectionHeader}>Our brothers</h2>
           <p className={styles.sectionText}>
@@ -76,7 +76,7 @@ export default function Home() {
         <div className={styles.imageWrapper}>
           <Image
             className={styles.sectionImage}
-            src="/our brothers.png"
+            src="/homepage-brothers.jpg"
             alt="Our Brothers"
             fill
             sizes="(max-width: 600px) 100vw, 35vw"
