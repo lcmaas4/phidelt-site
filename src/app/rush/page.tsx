@@ -1,29 +1,64 @@
 "use client";
 import React from "react";
-import Script from "next/script";
+import Hero from "../components/Hero/Hero";
 import styles from "./page.module.css";
 
 export default function Rush() {
   return (
-    <>
-      <Script
-        src="https://www.instagram.com/embed.js"
-        strategy="afterInteractive"
+    <div className={styles.wrapper}>
+      <Hero
+        title="Rush"
+        imageSrc="/rush-bg.jpg"
+        imageAlt="Rush background"
       />
-      <div className={styles.wrapper}>
-        <h1 className={styles.title}>
-          Check back at the start of next fall for information on rush. Check out
-          our spring &apos;25 rush video below!
-        </h1>
-        <div className={styles.embedWrapper}>
-          <blockquote
-            className="instagram-media"
-            data-instgrm-captioned
-            data-instgrm-permalink="https://www.instagram.com/reel/DESuG_bPmIi/?utm_source=ig_embed&amp;utm_campaign=loading"
-            data-instgrm-version="14"
-          />
+      <h1 className={styles.title}>
+        Check back at the start of next fall for information on rush. Check out
+        our past rush videos below!
+      </h1>
+      <div className={styles.videoGrid}>
+        <div className={styles.videoWrapper}>
+          <video 
+            className={styles.video}
+            controls 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+          >
+            <source src="/springrush25.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p className={styles.videoLabel}>Spring &apos;25</p>
+        </div>
+        <div className={styles.videoWrapper}>
+          <video 
+            className={styles.video}
+            controls 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+          >
+            <source src="/fallrush25.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p className={styles.videoLabel}>Fall &apos;25</p>
+        </div>
+        <div className={styles.videoWrapper}>
+          <video 
+            className={styles.video}
+            controls 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+          >
+            <source src="/springrush26.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p className={styles.videoLabel}>Spring &apos;26</p>
         </div>
       </div>
-    </>
+    </div>
   );
 }

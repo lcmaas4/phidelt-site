@@ -139,10 +139,33 @@
 }
 
 @media (max-width: 600px) {
+  .aboutPreview {
+    min-height: 80vh;
+  }
+
+  .aboutStuff {
+    padding-bottom: 10vh;
+  }
+
+  .aboutImage {
+    width: 40%;
+  }
+
+  .aboutPreview h3 {
+    font-size: clamp(0.875rem, 3.5vw, 1.125rem);
+    width: 80%;
+    margin: 1rem auto 0;
+  }
+
   .section,
-  .sectionReverse {
+  .sectionReverse,
+  .sectionMobileReverse {
     flex-direction: column;
     gap: 2rem;
+  }
+
+  .sectionMobileReverse {
+    flex-direction: column-reverse;
   }
 
   .sectionReverse {

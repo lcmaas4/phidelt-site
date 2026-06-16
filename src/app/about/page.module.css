@@ -45,6 +45,10 @@
   padding: 6vw 8vw;
 }
 
+.activitiesSection .sectionHeading {
+  color: #0d1433;
+}
+
 .brotherhoodSection {
   background-color: white;
   padding: 5vw;
@@ -192,7 +196,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: #0d1433;
+  background-color: #eaf3ff;
   padding: 5vw;
   gap: 4vw;
 }
@@ -207,14 +211,14 @@
 .historyTitle {
   font-family: TestSohne, sans-serif;
   font-size: clamp(20px, 3vw, 44px);
-  color: white;
+  color: #0d1433;
   margin: 0;
 }
 
 .historyParagraph {
   font-family: TestSohne, sans-serif;
   font-size: clamp(13px, 1.4vw, 20px);
-  color: rgba(255, 255, 255, 0.85);
+  color: #444;
   line-height: 1.7;
   margin: 0;
 }

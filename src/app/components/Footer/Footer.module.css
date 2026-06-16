@@ -1,68 +1,47 @@
 .footer {
-  background-color: #619cc7;
+  background-color: #0d1433;
   color: white;
-  padding: 3vw 2vw 2vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5vw;
-  font-family: TestSohne, sans-serif;
+  padding: 2vw 4vw;
   width: 100%;
+  font-family: TestSohne, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .logoWrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
-  opacity: 0.9;
-  transition: opacity 0.2s ease;
-}
-
-.logoWrapper:hover {
-  opacity: 1;
+  flex: 1;
+  justify-content: flex-start;
 }
 
 .logo {
+  height: 4vw;
+  max-height: 48px;
+  min-height: 32px;
   width: auto;
-  height: 5vw;
-  max-height: 64px;
-  min-height: 40px;
 }
 
-.nav {
+.middle {
   display: flex;
-  flex-direction: row;
-  gap: 1vw;
-}
-
-.navLink {
-  color: #0d1433;
-  text-decoration: none;
-  font-size: clamp(12px, 1.25vw, 18px);
-  font-family: TestSohne, sans-serif;
-  padding: 0.4vw 1.2vw;
-  border-radius: 5px;
-  background-color: white;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
-}
-
-.navLink:hover,
-.navLink:focus,
-.navLink:focus-visible {
-  background-color: #0d1433;
-  color: white;
-}
-
-.navLink:focus-visible {
-  outline: 2px solid #0d1433;
-  outline-offset: 2px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 2;
+  gap: 0.5vw;
 }
 
 .copy {
   margin: 0;
-  font-size: clamp(10px, 1.25vw, 16px);
+  font-size: clamp(10px, 0.9vw, 14px);
   opacity: 0.9;
 }
 
@@ -70,4 +49,73 @@
   margin: 0;
   font-size: clamp(8px, 0.65vw, 11px);
   color: rgba(255, 255, 255, 0.6);
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5vw;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-size: 19px;
+  font-family: TestSohne, sans-serif;
+  white-space: nowrap;
+  position: relative;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: white;
+  transition: width 0.25s ease;
+}
+
+.navLink:hover,
+.navLink:focus,
+.navLink:focus-visible {
+  opacity: 1;
+}
+
+.navLink:hover::after,
+.navLink:focus::after,
+.navLink:focus-visible::after {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .footer {
+    padding: 8vw 4vw 6vw;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .logoWrapper, .middle {
+    flex: none;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .logo {
+    height: 40px;
+  }
 }
