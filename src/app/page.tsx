@@ -60,7 +60,7 @@ export default function Home() {
       <hr className={styles.divider} />
 
       {/* Our Brothers */}
-      <div className={`${styles.section} ${styles.sectionReverse}`}>
+      <div className={styles.section}>
         <div className={styles.textWrapper}>
           <h2 className={styles.sectionHeader}>Our brothers</h2>
           <p className={styles.sectionText}>
@@ -91,7 +91,7 @@ export default function Home() {
         <div className={styles.imageWrapper}>
           <Image
             className={styles.sectionImage}
-            src="/70-backyard-concert.jpg"
+            src="/homepage-philo.jpg"
             alt="Philanthropy event"
             fill
             sizes="(max-width: 600px) 100vw, 35vw"
@@ -100,11 +100,10 @@ export default function Home() {
         <div className={styles.textWrapper}>
           <h2 className={styles.sectionHeader}>Our impact</h2>
           <p className={styles.sectionText}>
-            We find deep fulfillment in offering our support to the
-            underprivileged. Our chapter regularly conducts philanthropic work,
-            particularly in support of the LiveLikeLou Foundation to fund ALS
-            research. In 2015, we were recognized as an Iron Phi Chapter due to
-            our outstanding philanthropic fundraising efforts.
+            We make it our duty to support those in need. Our chapter regularly
+            conducts philanthropic work, often in support of the LiveLikeLou
+            Foundation and the Iron Phi program to fund groundbreaking ALS
+            research.
           </p>
           <Link className={styles.aboutButton} href="/impact">
             Learn more

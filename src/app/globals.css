@@ -1,7 +1,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --header-height: 80px;
+  --header-height: clamp(60px, 6vw, 80px);
 }
 
 @font-face {

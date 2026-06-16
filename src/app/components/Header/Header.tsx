@@ -11,8 +11,14 @@ const Header: React.FC = () => {
   useEffect(() => {
     let lastScrollY = window.scrollY;
     const handleScroll = () => {
-      setIsHidden(window.scrollY > lastScrollY);
-      lastScrollY = window.scrollY;
+      const currentScrollY = window.scrollY;
+      // Keep header visible at the top (within 80px)
+      if (currentScrollY < 80) {
+        setIsHidden(false);
+      } else {
+        setIsHidden(currentScrollY > lastScrollY);
+      }
+      lastScrollY = currentScrollY;
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
