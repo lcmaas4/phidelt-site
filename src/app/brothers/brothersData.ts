@@ -669,13 +669,6 @@ export const classes: Class[] = [
         major: 'Biological Engineering',
       },
       {
-        name: 'Andreas Gesser',
-        src: '/composites/307gesser.jpg',
-        alt: 'Gesser',
-        hometown: 'Westfield, NJ',
-        major: 'Business & Math',
-      },
-      {
         name: 'Zach Ferdico',
         src: '/composites/306ferdico.jpg',
         alt: 'Ferdico',
@@ -742,13 +735,6 @@ export const classes: Class[] = [
         alt: 'Gray',
         hometown: 'Ipswich, MA',
         major: 'International Affairs & Economics',
-      },
-      {
-        name: 'Kirk Chayevsky',
-        src: '/composites/285chayevsky.jpg',
-        alt: 'Chayevsky',
-        hometown: 'Atlanta, GA',
-        major: 'Entrepreneurship',
       },
     ],
   },
