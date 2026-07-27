@@ -49,6 +49,10 @@ a {
   text-decoration: none;
 }
 
+main {
+  flex: 1;
+}
+
 .header-spacer {
   height: var(--header-height);
 }
