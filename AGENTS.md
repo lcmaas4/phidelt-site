@@ -6,14 +6,16 @@ This document describes the AI agents configured for this project, their respons
 
 ### Purpose
 
-Assists with Next.js-specific development tasks, including routing, components, and framework-specific features.
+Assists with Next.js-specific development tasks, including routing, components, framework-specific features, database interactions, and media CDN management.
 
 ### Responsibilities
 
-- Next.js app router configuration and optimization
+- Next.js App Router configuration and optimization
 - Server and client component implementation
 - Image optimization and font loading
-- API route development
+- Serverless API route and Server Action development
+- MongoDB Atlas database operations and schema management
+- Cloudinary media asset lifecycle management (upload, transform, delete)
 - Build configuration and deployment guidance
 
 ### Important Constraints
@@ -26,29 +28,91 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 <!-- END:nextjs-agent-rules -->
 
-### Expected Inputs/Outputs
+---
 
-- **Input**: Feature requests, bug reports, code improvement suggestions
-- **Output**: Code changes, configuration updates, implementation guidance
+## Agent Guidelines: MongoDB Atlas & Cloudinary Operations
 
-### Lifecycle
+When an AI agent is tasked with uploading, editing, or deleting assets or database records, the agent must follow these standard procedures using the credentials in `.env` / `.env.local`.
 
-- Activated on-demand for Next.js-specific tasks
-- No persistent state between invocations
-
-### Contact
-
-Refer to repository maintainers listed in package.json
+### 1. Environment & Security Rules
+- Environment variables (`MONGODB_URI`, `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`, `NOTION_PASSWORD`, `ADMIN_API_KEY`) are stored in `.env.local` and `.env`.
+- **Zero Client Leakage**: Never import `src/lib/db.ts`, `src/lib/cloudinary.ts`, or `src/lib/auth.ts` into client components (`'use client'`).
+- **Zero Secret Exposure**: Never prefix server secrets with `NEXT_PUBLIC_`. Never output raw secret connection strings to console/logs.
 
 ---
 
-## How to Add a New Agent
+### 2. Media Asset Lifecycle (Cloudinary)
 
-1. Create a new section in this file with the agent name as an H2 heading
-2. Document the agent's purpose, responsibilities, and public interface
-3. List expected inputs/outputs and any configuration variables
-4. Specify lifecycle behavior (startup/shutdown, persistence)
-5. Provide owner/team contact information
-6. Update any relevant configuration files (e.g., `.github/`, CI/CD pipelines)
+#### A. Uploading Media Assets
+When adding an image or video to the project:
+1. Upload the file to Cloudinary using the Node SDK in a quick `npx tsx` execution or the upload utility:
+   ```ts
+   import { v2 as cloudinary } from 'cloudinary';
+   cloudinary.config({
+     cloud_name: process.env.CLOUDINARY_CLOUD_NAME || process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
+     api_key: process.env.CLOUDINARY_API_KEY,
+     api_secret: process.env.CLOUDINARY_API_SECRET,
+     secure: true,
+   });
 
-For implementation details, see the Next.js agent rules above and any additional framework-specific documentation in `node_modules/next/dist/docs/`.
+   const res = await cloudinary.uploader.upload(filePath, {
+     folder: 'phidelt-site/<category>', // e.g. 'phidelt-site/heroes', 'phidelt-site/about', 'phidelt-site/composites', 'phidelt-site/videos'
+     public_id: '<asset-name>',
+     resource_type: isVideo ? 'video' : 'image',
+     overwrite: true,
+   });
+   ```
+2. **Index in MongoDB**: Create or upsert a corresponding record in the `Asset` model (`src/models/Asset.ts`).
+3. **Register in Code**: Add or update the CDN URL mapping in `src/lib/siteAssets.ts` using `getCloudinaryImageUrl('phidelt-site/...')` or `getCloudinaryVideoUrl('phidelt-site/...')`.
+4. **Delete Local Binary**: Always remove the local image/video from `public/` after upload so large binary files are not committed to git.
+
+#### B. Deleting Media Assets
+1. Use `deleteCloudinaryAsset(publicId, resourceType)` from `src/lib/cloudinary.ts`.
+2. Remove the asset record from the `Asset` collection in MongoDB.
+3. Remove or update references in `src/lib/siteAssets.ts` or `Brother.imageUrl`.
+
+---
+
+### 3. Database Roster Operations (MongoDB Atlas)
+
+#### A. Adding or Updating Brothers
+1. Use the Mongoose connection manager:
+   ```ts
+   import connectToDatabase from '@/lib/db';
+   import Brother from '@/models/Brother';
+
+   await connectToDatabase();
+   ```
+2. Create or update brother records conforming to `src/models/Brother.ts`:
+   - `name`: string (required)
+   - `role`: string (e.g. 'President', 'VP of Standards', etc.)
+   - `category`: `'exec'` | `'council'` | `'active'` | `'alumni'`
+   - `classSymbol`: string (e.g. `'AB'`, `'AA'`, `'Ω'`, `'Ψ'`, `'Χ'`, `'Φ'`)
+   - `imageUrl`: Cloudinary CDN URL string
+   - `cloudinaryPublicId`: Cloudinary public ID for asset lifecycle management
+   - `hometown`: string
+   - `major`: string
+   - `order`: number (for sorting priority)
+   - `isActive`: boolean (`true`)
+
+#### B. Deleting Brothers
+1. Retrieve the brother record to check for `cloudinaryPublicId`.
+2. If `cloudinaryPublicId` exists, delete the image from Cloudinary using `deleteCloudinaryAsset(brother.cloudinaryPublicId)`.
+3. Delete the document: `await Brother.findByIdAndDelete(id)`.
+
+---
+
+### 4. Executing Operations via REST API
+For HTTP-based management, authenticated routes require the `Authorization: Bearer <token>` or `x-admin-token: <token>` header (matching `ADMIN_API_KEY` or `NOTION_PASSWORD`):
+- `POST /api/brothers` — Create brother
+- `PUT /api/brothers/:id` — Update brother fields
+- `DELETE /api/brothers/:id` — Delete brother and clean up Cloudinary headshot
+- `POST /api/cloudinary/upload` — Multipart FormData upload to Cloudinary and MongoDB
+- `POST /api/cloudinary/sign` — Generate signed direct-upload parameters
+
+---
+
+### 5. Verification Checklist
+After making database or asset changes:
+- Run `npm run lint` and `npm run build` to verify zero TypeScript or Next.js build regressions.
+- Verify that `/public` contains no binary image/video files (only web icons, manifest, and fonts).

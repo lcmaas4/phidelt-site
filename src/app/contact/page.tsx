@@ -1,6 +1,12 @@
 import React from 'react';
 import styles from './page.module.css';
 
+/**
+ * Contact Us Page Component
+ * Displays executive officer email contact information.
+ *
+ * @returns JSX element for the Contact page.
+ */
 export default function ContactPage() {
   return (
     <main className={styles.container}>

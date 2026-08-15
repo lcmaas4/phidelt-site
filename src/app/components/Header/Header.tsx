@@ -3,10 +3,17 @@ import React, { useState, useEffect } from 'react';
 import styles from './Header.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
+import { siteAssets } from '@/lib/siteAssets';
 import { FaInstagram } from 'react-icons/fa';
 import { FiMenu } from 'react-icons/fi';
 import { IoClose } from 'react-icons/io5';
 
+/**
+ * Global Site Header & Navigation Component
+ * Features smart scroll hide/reveal, mobile navigation menu, and brand logo.
+ *
+ * @returns JSX element for the global site header.
+ */
 const Header: React.FC = () => {
   const [isHidden, setIsHidden] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -65,7 +72,7 @@ const Header: React.FC = () => {
       <header className={`${styles.header} ${isHidden ? styles.hidden : ''}`}>
         <Link href="/" className={styles.logoWrapper}>
           <Image
-            src="/white logo no letters.png"
+            src={siteAssets.logos.whiteLogoNoLetters}
             alt="Phi Delta Theta"
             width={160}
             height={64}

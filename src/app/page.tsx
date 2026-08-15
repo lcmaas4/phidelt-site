@@ -1,14 +1,21 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { siteAssets } from '@/lib/siteAssets';
 import styles from './page.module.css';
 
+/**
+ * Home Page Component
+ * Renders the homepage hero, story, brotherhood preview, and philanthropy overview.
+ *
+ * @returns JSX element for the homepage.
+ */
 export default function Home() {
   return (
     <div className={styles.fatWrapper}>
       {/* Hero */}
       <div className={styles.aboutPreview}>
         <Image
-          src="/formal flick.png"
+          src={siteAssets.home.heroBg}
           alt=""
           fill
           className={styles.aboutPreviewBg}
@@ -17,7 +24,7 @@ export default function Home() {
         <div className={styles.aboutStuff}>
           <Image
             className={styles.aboutImage}
-            src="/white logo.png"
+            src={siteAssets.logos.whiteLogo}
             alt="Phi Delta Theta logo without letters"
             width={300}
             height={300}
@@ -35,7 +42,7 @@ export default function Home() {
         <div className={styles.imageWrapper}>
           <Image
             className={styles.sectionImage}
-            src="/coop-and-jc.jpeg"
+            src={siteAssets.home.storyImage}
             alt="Brothers"
             fill
             sizes="(max-width: 600px) 100vw, 35vw"
@@ -76,7 +83,7 @@ export default function Home() {
         <div className={styles.imageWrapper}>
           <Image
             className={styles.sectionImage}
-            src="/homepage-brothers.jpg"
+            src={siteAssets.home.brothersImage}
             alt="Our Brothers"
             fill
             sizes="(max-width: 600px) 100vw, 35vw"
@@ -91,7 +98,7 @@ export default function Home() {
         <div className={styles.imageWrapper}>
           <Image
             className={styles.sectionImage}
-            src="/homepage-philo.jpg"
+            src={siteAssets.home.philoImage}
             alt="Philanthropy event"
             fill
             sizes="(max-width: 600px) 100vw, 35vw"

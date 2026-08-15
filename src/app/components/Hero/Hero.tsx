@@ -8,6 +8,13 @@ interface HeroProps {
   imageAlt: string;
 }
 
+/**
+ * Page Hero Header Component
+ * Renders full-width background image banner with title and dark overlay.
+ *
+ * @param props - Hero properties including title, imageSrc, and imageAlt.
+ * @returns JSX element for the page hero banner.
+ */
 const Hero: React.FC<HeroProps> = ({ title, imageSrc, imageAlt }) => {
   return (
     <section className={styles.hero}>

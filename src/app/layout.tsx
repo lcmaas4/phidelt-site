@@ -16,6 +16,13 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Root Layout Component
+ * Provides global HTML document wrapper, font configuration, header, and footer.
+ *
+ * @param props - Object containing child React nodes to render within the layout.
+ * @returns JSX element for the root HTML shell.
+ */
 export default function RootLayout({
   children,
 }: {

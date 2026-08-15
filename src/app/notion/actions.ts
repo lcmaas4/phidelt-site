@@ -1,5 +1,11 @@
 'use server';
 
+/**
+ * Server action to validate the Notion access gate password.
+ *
+ * @param password - User-provided password string.
+ * @returns Object with success boolean and redirect URL if authorized.
+ */
 export async function validateNotionPassword(
   password: string
 ): Promise<{ success: boolean; redirectUrl?: string; error?: string }> {

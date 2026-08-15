@@ -10,6 +10,13 @@ type Props = {
   major?: string;
 };
 
+/**
+ * BrotherCard Component
+ * Displays a single brother's headshot, name, executive/council role, hometown, and major.
+ *
+ * @param props - Brother profile properties.
+ * @returns JSX element rendering the brother profile card.
+ */
 export default function BrotherCard({
   name,
   src,
