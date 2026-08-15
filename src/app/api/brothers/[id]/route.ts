@@ -26,6 +26,14 @@ const BrotherUpdateSchema = z
   })
   .strict();
 
+/**
+ * GET /api/brothers/:id
+ * Retrieves a single brother by MongoDB ObjectId.
+ *
+ * @param request - Incoming NextRequest.
+ * @param context - Route context with path parameter id.
+ * @returns NextResponse with brother record or error.
+ */
 export async function GET(request: NextRequest, context: RouteContext) {
   try {
     await connectToDatabase();
@@ -51,6 +59,14 @@ export async function GET(request: NextRequest, context: RouteContext) {
   }
 }
 
+/**
+ * PUT /api/brothers/:id
+ * Protected administrator endpoint to update a brother by ObjectId.
+ *
+ * @param request - Incoming NextRequest with validated update fields.
+ * @param context - Route context with path parameter id.
+ * @returns NextResponse with updated brother record or validation/auth error.
+ */
 export async function PUT(request: NextRequest, context: RouteContext) {
   const auth = verifyAdminAuth(request);
   if (!auth.authorized) {
@@ -99,6 +115,14 @@ export async function PUT(request: NextRequest, context: RouteContext) {
   }
 }
 
+/**
+ * DELETE /api/brothers/:id
+ * Protected administrator endpoint to delete a brother and their Cloudinary photo.
+ *
+ * @param request - Incoming NextRequest.
+ * @param context - Route context with path parameter id.
+ * @returns NextResponse with deleted brother confirmation.
+ */
 export async function DELETE(request: NextRequest, context: RouteContext) {
   const auth = verifyAdminAuth(request);
   if (!auth.authorized) {

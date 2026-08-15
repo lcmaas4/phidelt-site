@@ -9,6 +9,11 @@ import mongoose from 'mongoose';
 import Brother from '../src/models/Brother';
 import { execBoard, council, classes } from '../src/app/brothers/brothersData';
 
+/**
+ * CLI Seeding Routine
+ * Replaces the entire MongoDB brothers collection in a single atomic transaction
+ * using the static brothersData definition.
+ */
 async function seed() {
   const MONGODB_URI = process.env.MONGODB_URI;
 

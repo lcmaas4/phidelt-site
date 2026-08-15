@@ -2,6 +2,13 @@ import { NextRequest, NextResponse } from 'next/server';
 import { generateUploadSignature } from '@/lib/cloudinary';
 import { verifyAdminAuth, unauthorizedResponse } from '@/lib/auth';
 
+/**
+ * POST /api/cloudinary/sign
+ * Protected administrator endpoint to generate signed direct-upload parameters for Cloudinary.
+ *
+ * @param request - Incoming NextRequest with optional folder and customParams.
+ * @returns NextResponse with Cloudinary signature payload.
+ */
 export async function POST(request: NextRequest) {
   const auth = verifyAdminAuth(request);
   if (!auth.authorized) {

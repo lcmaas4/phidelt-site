@@ -17,9 +17,13 @@ export interface UploadSignatureResponse {
 }
 
 /**
- * Generate a secure signature for direct client-to-Cloudinary uploads.
- * This keeps the API Secret safe on the server while allowing the browser
- * to upload large files (videos/images) directly without hitting serverless timeout/size limits.
+ * Generates a secure timestamped signature for direct client-to-Cloudinary uploads.
+ * Keeps the API secret on the server while allowing direct browser uploads.
+ *
+ * @param folder - Target folder in Cloudinary.
+ * @param customParams - Additional upload parameters to include in the signature.
+ * @returns Object containing timestamp, signature, apiKey, cloudName, and folder.
+ * @throws Error if Cloudinary credentials are not configured.
  */
 export function generateUploadSignature(
   folder = 'phidelt-site',
@@ -54,7 +58,11 @@ export function generateUploadSignature(
 }
 
 /**
- * Server-side direct buffer upload to Cloudinary.
+ * Uploads an in-memory Buffer directly to Cloudinary using an upload stream.
+ *
+ * @param buffer - File data Buffer.
+ * @param options - Cloudinary upload stream options (e.g. folder, resource_type).
+ * @returns Promise resolving to the Cloudinary UploadApiResponse.
  */
 export async function uploadBufferToCloudinary(
   buffer: Buffer,
@@ -73,7 +81,11 @@ export async function uploadBufferToCloudinary(
 }
 
 /**
- * Delete an asset from Cloudinary by its public ID.
+ * Deletes a media asset from Cloudinary by its public ID.
+ *
+ * @param publicId - Cloudinary asset public ID.
+ * @param resourceType - Resource type ('image', 'video', 'raw'). Defaults to 'image'.
+ * @returns Promise resolving to the Cloudinary deletion result.
  */
 export async function deleteCloudinaryAsset(
   publicId: string,

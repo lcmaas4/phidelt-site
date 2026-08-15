@@ -8,6 +8,9 @@ const CLOUDINARY_BASE_URL = `https://res.cloudinary.com/${CLOUD_NAME}`;
 
 /**
  * Returns a high-performance Cloudinary CDN URL for images with auto format & quality optimization.
+ *
+ * @param publicId - Cloudinary asset public ID.
+ * @returns Fully-qualified Cloudinary image delivery URL.
  */
 export function getCloudinaryImageUrl(publicId: string): string {
   return `${CLOUDINARY_BASE_URL}/image/upload/f_auto,q_auto/${publicId}`;
@@ -15,6 +18,9 @@ export function getCloudinaryImageUrl(publicId: string): string {
 
 /**
  * Returns a high-performance Cloudinary CDN URL for progressive MP4 video playback.
+ *
+ * @param publicId - Cloudinary asset public ID.
+ * @returns Fully-qualified Cloudinary video streaming URL.
  */
 export function getCloudinaryVideoUrl(publicId: string): string {
   const cleanId = publicId.replace(/\.(mp4|mov|webm)$/i, '');
@@ -23,6 +29,9 @@ export function getCloudinaryVideoUrl(publicId: string): string {
 
 /**
  * Returns an auto-generated video poster thumbnail from the first frame of the video.
+ *
+ * @param publicId - Cloudinary asset public ID.
+ * @returns Fully-qualified Cloudinary video poster image URL.
  */
 export function getCloudinaryVideoPosterUrl(publicId: string): string {
   const cleanId = publicId.replace(/\.(mp4|mov|webm)$/i, '');

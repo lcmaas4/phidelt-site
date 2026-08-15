@@ -20,6 +20,13 @@ if (!cached) {
   cached = global.mongooseCache = { conn: null, promise: null };
 }
 
+/**
+ * Connects to MongoDB Atlas using Mongoose and caches the connection instance.
+ * Reuses active connections across warm serverless functions to prevent connection pool exhaustion.
+ *
+ * @returns Promise resolving to the connected Mongoose instance.
+ * @throws Error if MONGODB_URI environment variable is not defined.
+ */
 export async function connectToDatabase(): Promise<typeof mongoose> {
   const MONGODB_URI = process.env.MONGODB_URI;
 

@@ -7,6 +7,12 @@ import styles from './page.module.css';
 // Revalidate page cache periodically in ISR
 export const revalidate = 60;
 
+/**
+ * Brothers Roster Page Server Component
+ * Fetches dynamic brother records from MongoDB (with static fallback) and renders the chapter roster.
+ *
+ * @returns JSX element for the brother roster page.
+ */
 export default async function Brothers() {
   const { execBoard, council, classes } = await getBrothersData();
 

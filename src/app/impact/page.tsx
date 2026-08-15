@@ -4,6 +4,12 @@ import Hero from '../components/Hero/Hero';
 import { siteAssets } from '@/lib/siteAssets';
 import styles from './page.module.css';
 
+/**
+ * Our Impact Page Component
+ * Showcases philanthropy initiatives (LiveLikeLou, Iron Phi), service events, and fundraisers.
+ *
+ * @returns JSX element for the Impact page.
+ */
 export default function Impact() {
   return (
     <div className={styles.wrapper}>

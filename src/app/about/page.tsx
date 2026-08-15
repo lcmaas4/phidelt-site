@@ -36,6 +36,12 @@ const activities: Activity[] = [
   },
 ];
 
+/**
+ * About Us Page Component
+ * Presents the chapter background, national history, brotherhood gallery, and activities.
+ *
+ * @returns JSX element for the About page.
+ */
 export default function About() {
   return (
     <div className={styles.wrapper}>

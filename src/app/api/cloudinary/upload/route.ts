@@ -29,6 +29,13 @@ const ALLOWED_VIDEO_MIMES = new Set([
 const MAX_IMAGE_SIZE = 10 * 1024 * 1024; // 10MB
 const MAX_VIDEO_SIZE = 50 * 1024 * 1024; // 50MB
 
+/**
+ * POST /api/cloudinary/upload
+ * Protected administrator endpoint to upload a media file to Cloudinary and register its metadata in MongoDB.
+ *
+ * @param request - Incoming NextRequest with multipart FormData (file, category, altText).
+ * @returns NextResponse with Cloudinary asset details and MongoDB record id.
+ */
 export async function POST(request: NextRequest) {
   const auth = verifyAdminAuth(request);
   if (!auth.authorized) {

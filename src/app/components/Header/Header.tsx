@@ -8,6 +8,12 @@ import { FaInstagram } from 'react-icons/fa';
 import { FiMenu } from 'react-icons/fi';
 import { IoClose } from 'react-icons/io5';
 
+/**
+ * Global Site Header & Navigation Component
+ * Features smart scroll hide/reveal, mobile navigation menu, and brand logo.
+ *
+ * @returns JSX element for the global site header.
+ */
 const Header: React.FC = () => {
   const [isHidden, setIsHidden] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);

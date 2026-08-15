@@ -19,6 +19,14 @@ const BrotherInputSchema = z.object({
   isActive: z.boolean().optional().default(true),
 });
 
+/**
+ * GET /api/brothers
+ * Retrieves brothers from MongoDB, optionally filtered by category or class,
+ * or grouped by Executive Board, Council, and Classes.
+ *
+ * @param request - Incoming NextRequest with query parameters (grouped, category, class).
+ * @returns NextResponse with JSON payload of brothers data.
+ */
 export async function GET(request: NextRequest) {
   try {
     await connectToDatabase();
@@ -84,6 +92,13 @@ export async function GET(request: NextRequest) {
   }
 }
 
+/**
+ * POST /api/brothers
+ * Protected administrator endpoint to create a new brother document in MongoDB.
+ *
+ * @param request - Incoming NextRequest with JSON payload of brother properties.
+ * @returns NextResponse with created brother document or validation/auth error.
+ */
 export async function POST(request: NextRequest) {
   const auth = verifyAdminAuth(request);
   if (!auth.authorized) {

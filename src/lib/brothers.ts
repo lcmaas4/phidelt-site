@@ -29,6 +29,9 @@ export interface BrotherLike {
 /**
  * Shared helper to group active brothers by class symbol.
  * Preserves brothers without an explicit classSymbol under 'Active'.
+ *
+ * @param activeBrothers - Array of brother objects with names, images, and optional class symbols.
+ * @returns Array of class groupings with symbol and brother lists.
  */
 export function groupBrothersByClass(activeBrothers: BrotherLike[]): ClassType[] {
   const classesMap = new Map<string, BrotherType[]>();
@@ -57,6 +60,8 @@ export function groupBrothersByClass(activeBrothers: BrotherLike[]): ClassType[]
 /**
  * Server-side helper to fetch brothers data for Server Components.
  * Seamlessly falls back to static data if MongoDB is not configured or unavailable.
+ *
+ * @returns Promise resolving to the BrothersPageData structure.
  */
 export async function getBrothersData(): Promise<BrothersPageData> {
   if (!process.env.MONGODB_URI) {

@@ -3,6 +3,12 @@ import { useState } from 'react';
 import styles from './page.module.css';
 import { validateNotionPassword } from './actions';
 
+/**
+ * Notion Access Gate Page Component
+ * Renders a password-protected gateway for chapter brothers to access internal Notion resources.
+ *
+ * @returns JSX element for the Notion access gate.
+ */
 export default function Notion() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);

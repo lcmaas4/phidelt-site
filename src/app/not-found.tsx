@@ -1,6 +1,12 @@
 import Link from 'next/link';
 import styles from './not-found.module.css';
 
+/**
+ * Custom 404 Not Found Page Component
+ * Displays user-friendly error message and link to return to the homepage.
+ *
+ * @returns JSX element for the 404 page.
+ */
 export default function NotFound() {
   return (
     <div className={styles.wrapper}>

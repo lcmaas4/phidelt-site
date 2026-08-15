@@ -3,6 +3,12 @@ import Link from 'next/link';
 import { siteAssets } from '@/lib/siteAssets';
 import styles from './page.module.css';
 
+/**
+ * Home Page Component
+ * Renders the homepage hero, story, brotherhood preview, and philanthropy overview.
+ *
+ * @returns JSX element for the homepage.
+ */
 export default function Home() {
   return (
     <div className={styles.fatWrapper}>

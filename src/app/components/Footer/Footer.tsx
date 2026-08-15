@@ -4,6 +4,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { siteAssets } from '@/lib/siteAssets';
 
+/**
+ * Global Site Footer Component
+ * Renders chapter copyright, contributors credit, and navigation links.
+ *
+ * @returns JSX element for the global footer.
+ */
 const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>

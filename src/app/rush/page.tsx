@@ -3,6 +3,12 @@ import Hero from "../components/Hero/Hero";
 import { siteAssets } from "@/lib/siteAssets";
 import styles from "./page.module.css";
 
+/**
+ * Recruitment (Rush) Page Component
+ * Renders rush information and high-performance Cloudinary video players with posters.
+ *
+ * @returns JSX element for the Rush page.
+ */
 export default function Rush() {
   return (
     <div className={styles.wrapper}>
