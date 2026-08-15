@@ -18,12 +18,19 @@ async function seed() {
     process.exit(1);
   }
 
+  // Explicit safeguard against accidental production overwrites
+  const isProd = process.env.NODE_ENV === 'production' || process.env.VERCEL_ENV === 'production' || process.env.CONTEXT === 'production';
+  const allowProdSeed = process.env.ALLOW_PROD_SEED === 'true';
+
+  if (isProd && !allowProdSeed) {
+    console.error('⛔ Safeguard: Seeding against production environment is blocked.');
+    console.error('👉 To force execution, set ALLOW_PROD_SEED=true in your environment.');
+    process.exit(1);
+  }
+
   console.log('🔄 Connecting to MongoDB...');
   await mongoose.connect(MONGODB_URI);
   console.log('✅ Connected to MongoDB.');
-
-  console.log('🧹 Clearing existing brothers collection...');
-  await Brother.deleteMany({});
 
   const brothersToInsert: Array<Record<string, unknown>> = [];
 
@@ -82,12 +89,28 @@ async function seed() {
   });
   console.log(`📌 Processing ${classBrotherCount} Class members across ${classes.length} classes...`);
 
-  console.log(`💾 Inserting ${brothersToInsert.length} total brother records into MongoDB...`);
-  const result = await Brother.insertMany(brothersToInsert);
+  console.log('🔒 Starting database transaction for atomic roster replacement...');
+  const session = await mongoose.startSession();
+  session.startTransaction();
 
-  console.log(`🎉 Successfully seeded ${result.length} brothers into MongoDB!`);
-  await mongoose.disconnect();
-  console.log('🔌 Disconnected from MongoDB.');
+  try {
+    console.log('🧹 Clearing existing brothers collection in transaction...');
+    await Brother.deleteMany({}, { session });
+
+    console.log(`💾 Inserting ${brothersToInsert.length} total brother records into MongoDB...`);
+    const result = await Brother.insertMany(brothersToInsert, { session });
+
+    await session.commitTransaction();
+    console.log(`🎉 Successfully seeded ${result.length} brothers into MongoDB atomically!`);
+  } catch (error) {
+    console.error('⚠️ Transaction failed! Rolling back changes...');
+    await session.abortTransaction();
+    throw error;
+  } finally {
+    session.endSession();
+    await mongoose.disconnect();
+    console.log('🔌 Disconnected from MongoDB.');
+  }
 }
 
 seed().catch((err) => {

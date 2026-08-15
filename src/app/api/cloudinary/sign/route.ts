@@ -1,11 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { generateUploadSignature } from '@/lib/cloudinary';
+import { verifyAdminAuth, unauthorizedResponse } from '@/lib/auth';
 
 export async function POST(request: NextRequest) {
+  const auth = verifyAdminAuth(request);
+  if (!auth.authorized) {
+    return unauthorizedResponse(auth.error);
+  }
+
   try {
     const body = await request.json().catch(() => ({}));
-    const folder = body.folder || 'phidelt-site';
-    const customParams = body.params || {};
+    const folder = typeof body.folder === 'string' ? body.folder : 'phidelt-site';
+    const customParams = typeof body.params === 'object' && body.params !== null ? body.params : {};
 
     const signData = generateUploadSignature(folder, customParams);
 
@@ -14,13 +20,11 @@ export async function POST(request: NextRequest) {
       data: signData,
     });
   } catch (error: unknown) {
-    const errMessage =
-      error instanceof Error ? error.message : 'Failed to generate upload signature';
     console.error('Error generating Cloudinary signature:', error);
     return NextResponse.json(
       {
         success: false,
-        error: errMessage,
+        error: 'Internal server error',
       },
       { status: 500 }
     );

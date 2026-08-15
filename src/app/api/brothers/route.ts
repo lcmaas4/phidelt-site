@@ -2,13 +2,15 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import connectToDatabase from '@/lib/db';
 import Brother from '@/models/Brother';
+import { groupBrothersByClass } from '@/lib/brothers';
+import { verifyAdminAuth, unauthorizedResponse } from '@/lib/auth';
 
 const BrotherInputSchema = z.object({
   name: z.string().min(1, 'Name is required'),
   role: z.string().optional(),
   category: z.enum(['exec', 'council', 'active', 'alumni']).default('active'),
   classSymbol: z.string().optional(),
-  imageUrl: z.string().default(''),
+  imageUrl: z.string().url('A valid image URL is required'),
   cloudinaryPublicId: z.string().optional(),
   alt: z.string().optional(),
   hometown: z.string().optional(),
@@ -38,69 +40,56 @@ export async function GET(request: NextRequest) {
     }
 
     // Return grouped format matching frontend requirements
-    const execBoard = brothers.filter((b) => b.category === 'exec');
-    const council = brothers.filter((b) => b.category === 'council');
-    
-    // Group classes
-    const classBrothers = brothers.filter((b) => b.category === 'active' && b.classSymbol);
-    const classesMap = new Map<string, typeof classBrothers>();
-
-    for (const b of classBrothers) {
-      const sym = b.classSymbol || 'Other';
-      if (!classesMap.has(sym)) {
-        classesMap.set(sym, []);
-      }
-      classesMap.get(sym)!.push(b);
-    }
-
-    const classes = Array.from(classesMap.entries()).map(([symbol, brothersList]) => ({
-      symbol,
-      brothers: brothersList.map((b) => ({
+    const execBoard = brothers
+      .filter((b) => b.category === 'exec')
+      .map((b) => ({
         _id: b._id,
         name: b.name,
-        src: b.imageUrl,
+        role: b.role || '',
+        src: b.imageUrl || '',
         alt: b.alt || b.name,
-        role: b.role,
-        hometown: b.hometown,
-        major: b.major,
-      })),
-    }));
+        hometown: b.hometown || '',
+        major: b.major || '',
+      }));
+
+    const council = brothers
+      .filter((b) => b.category === 'council')
+      .map((b) => ({
+        _id: b._id,
+        name: b.name,
+        role: b.role || '',
+        src: b.imageUrl || '',
+        alt: b.alt || b.name,
+        hometown: b.hometown || '',
+        major: b.major || '',
+      }));
+
+    const activeBrothers = brothers.filter((b) => b.category === 'active');
+    const classes = groupBrothersByClass(activeBrothers);
 
     return NextResponse.json({
       success: true,
       data: {
-        execBoard: execBoard.map((b) => ({
-          _id: b._id,
-          name: b.name,
-          role: b.role,
-          src: b.imageUrl,
-          alt: b.alt || b.name,
-          hometown: b.hometown,
-          major: b.major,
-        })),
-        council: council.map((b) => ({
-          _id: b._id,
-          name: b.name,
-          role: b.role,
-          src: b.imageUrl,
-          alt: b.alt || b.name,
-          hometown: b.hometown,
-          major: b.major,
-        })),
+        execBoard,
+        council,
         classes,
       },
     });
   } catch (error: unknown) {
-    const errMessage = error instanceof Error ? error.message : 'Failed to fetch brothers';
     console.error('Error fetching brothers:', error);
     return NextResponse.json(
-      { success: false, error: errMessage },
+      { success: false, error: 'Internal server error' },
       { status: 500 }
     );
   }
 }
 
 export async function POST(request: NextRequest) {
+  const auth = verifyAdminAuth(request);
+  if (!auth.authorized) {
+    return unauthorizedResponse(auth.error);
+  }
+
   try {
     await connectToDatabase();
 
@@ -125,9 +114,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const errMessage = error instanceof Error ? error.message : 'Failed to create brother';
     return NextResponse.json(
-      { success: false, error: errMessage },
+      { success: false, error: 'Internal server error' },
       { status: 500 }
     );
   }

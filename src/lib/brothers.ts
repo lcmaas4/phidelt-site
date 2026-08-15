@@ -15,6 +15,45 @@ export interface BrothersPageData {
   source: 'database' | 'static';
 }
 
+export interface BrotherLike {
+  _id?: unknown;
+  name: string;
+  imageUrl?: string;
+  alt?: string;
+  role?: string;
+  hometown?: string;
+  major?: string;
+  classSymbol?: string;
+}
+
+/**
+ * Shared helper to group active brothers by class symbol.
+ * Preserves brothers without an explicit classSymbol under 'Active'.
+ */
+export function groupBrothersByClass(activeBrothers: BrotherLike[]): ClassType[] {
+  const classesMap = new Map<string, BrotherType[]>();
+
+  for (const b of activeBrothers) {
+    const sym = b.classSymbol && b.classSymbol.trim() ? b.classSymbol.trim() : 'Active';
+    if (!classesMap.has(sym)) {
+      classesMap.set(sym, []);
+    }
+    classesMap.get(sym)!.push({
+      name: b.name,
+      src: b.imageUrl || '',
+      alt: b.alt || b.name,
+      role: b.role || '',
+      hometown: b.hometown || '',
+      major: b.major || '',
+    });
+  }
+
+  return Array.from(classesMap.entries()).map(([symbol, brothersList]) => ({
+    symbol,
+    brothers: brothersList,
+  }));
+}
+
 /**
  * Server-side helper to fetch brothers data for Server Components.
  * Seamlessly falls back to static data if MongoDB is not configured or unavailable.
@@ -49,53 +88,31 @@ export async function getBrothersData(): Promise<BrothersPageData> {
       .filter((b) => b.category === 'exec')
       .map((b) => ({
         name: b.name,
-        role: b.role,
-        src: b.imageUrl,
+        role: b.role || '',
+        src: b.imageUrl || '',
         alt: b.alt || b.name,
-        hometown: b.hometown,
-        major: b.major,
+        hometown: b.hometown || '',
+        major: b.major || '',
       }));
 
     const council: BrotherType[] = brothers
       .filter((b) => b.category === 'council')
       .map((b) => ({
         name: b.name,
-        role: b.role,
-        src: b.imageUrl,
+        role: b.role || '',
+        src: b.imageUrl || '',
         alt: b.alt || b.name,
-        hometown: b.hometown,
-        major: b.major,
+        hometown: b.hometown || '',
+        major: b.major || '',
       }));
 
-    const classBrothers = brothers.filter((b) => b.category === 'active' && b.classSymbol);
-    const classesMap = new Map<string, BrotherType[]>();
-
-    for (const b of classBrothers) {
-      const sym = b.classSymbol || 'Active';
-      if (!classesMap.has(sym)) {
-        classesMap.set(sym, []);
-      }
-      classesMap.get(sym)!.push({
-        name: b.name,
-        src: b.imageUrl,
-        alt: b.alt || b.name,
-        role: b.role,
-        hometown: b.hometown,
-        major: b.major,
-      });
-    }
-
-    const classes: ClassType[] = Array.from(classesMap.entries()).map(
-      ([symbol, brothersList]) => ({
-        symbol,
-        brothers: brothersList,
-      })
-    );
+    const activeBrothers = brothers.filter((b) => b.category === 'active');
+    const classes = groupBrothersByClass(activeBrothers);
 
     return {
-      execBoard: execBoard.length > 0 ? execBoard : staticExec,
-      council: council.length > 0 ? council : staticCouncil,
-      classes: classes.length > 0 ? classes : staticClasses,
+      execBoard,
+      council,
+      classes,
       source: 'database',
     };
   } catch (error) {

@@ -26,7 +26,7 @@ Frontend (Next.js 16 App Router)
 > **Zero Exposure Rule for Database & Cloudinary Secrets:**
 > - `MONGODB_URI`, `CLOUDINARY_API_SECRET`, and `CLOUDINARY_API_KEY` are **server-only** secrets.
 > - **NEVER** prefix them with `NEXT_PUBLIC_`.
-> - **NEVER** import `@/lib/db` or `@/lib/cloudinary` into any file marked with `'use client'`.
+> - **NEVER** import `@/lib/db`, `@/lib/cloudinary`, or `@/lib/auth` into any file marked with `'use client'`.
 > - Only `NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME` is safe for client-side bundle exposure.
 
 ---
@@ -51,7 +51,7 @@ Brother data is stored in the **`brothers`** collection in MongoDB Atlas.
 {
   "name": "First Last",
   "role": "President",
-  "category": "exec", // Options: "exec" | "council" | "active" | "alumni"
+  "category": "exec", // Rendered categories: "exec" | "council" | "active". "alumni" records can be stored in the DB but are not rendered on the /brothers roster page.
   "classSymbol": "AB", // Greek class letter (e.g., "AB", "AA", "Ω", "Ψ")
   "imageUrl": "https://res.cloudinary.com/j66ihmue/image/upload/phidelt-site/composites/headshot.jpg",
   "cloudinaryPublicId": "phidelt-site/composites/headshot",
@@ -66,7 +66,7 @@ Brother data is stored in the **`brothers`** collection in MongoDB Atlas.
 ### Adding a New Brother via MongoDB Atlas:
 1. Log into MongoDB Atlas → **Browse Collections** → `phidelt` → `brothers`.
 2. Click **Insert Document** and fill in the fields matching the schema above.
-3. The live `/brothers` page will automatically refresh with the new brother within 60 seconds (due to ISR caching).
+3. The `/brothers` page uses Next.js ISR (Incremental Static Regeneration). Changes will be served with stale-while-revalidate behavior on subsequent page requests after the revalidation window.
 
 ---
 
@@ -87,22 +87,27 @@ All media should be uploaded to the designated Cloudinary folders:
 1. Log into the Cloudinary Media Library.
 2. Navigate to `phidelt-site/videos/`.
 3. Upload the new MP4 video (e.g. `fallrush26.mp4`).
-4. In [`src/lib/siteAssets.ts`](file:///Users/lcmaas4/Desktop/projects/phidelt-site/src/lib/siteAssets.ts), add the video entry under `siteAssets.rush`:
+4. In [`src/lib/siteAssets.ts`](src/lib/siteAssets.ts), add the video entry under `siteAssets.rush`:
    ```ts
    fall26Video: getCloudinaryVideoUrl('phidelt-site/videos/fallrush26'),
    fall26Poster: getCloudinaryVideoPosterUrl('phidelt-site/videos/fallrush26'),
    ```
-5. Add the `<video>` block to [`src/app/rush/page.tsx`](file:///Users/lcmaas4/Desktop/projects/phidelt-site/src/app/rush/page.tsx).
+5. Add the `<video>` block to [`src/app/rush/page.tsx`](src/app/rush/page.tsx).
 
 ---
 
 ## 6. Programmatic Backend API Reference
 
-The site exposes serverless REST endpoints for programmatic management:
+The site exposes serverless REST endpoints for programmatic management.
 
-- **`GET /api/brothers?grouped=true`**: Returns brothers grouped by Exec, Council, and Classes.
-- **`GET /api/brothers?category=exec`**: Filter by category (`exec`, `council`, `active`).
-- **`POST /api/brothers`**: Create a new brother (JSON body validated with Zod).
-- **`PUT /api/brothers/:id`**: Update brother profile fields.
-- **`DELETE /api/brothers/:id`**: Deletes brother and automatically removes their Cloudinary photo.
-- **`POST /api/cloudinary/upload`**: Multipart file upload endpoint that streams directly to Cloudinary and registers the asset in MongoDB.
+> [!IMPORTANT]
+> **Authentication for Mutating Endpoints:**
+> All write operations (`POST`, `PUT`, `DELETE`, upload, and signature generation) require administrator credentials provided via the `Authorization: Bearer <token>` or `x-admin-token: <token>` HTTP header (matching `ADMIN_API_KEY` or `NOTION_PASSWORD`).
+
+- **`GET /api/brothers?grouped=true`**: Public endpoint. Returns brothers grouped by Exec, Council, and Classes.
+- **`GET /api/brothers?category=exec`**: Public endpoint. Filter by category (`exec`, `council`, `active`).
+- **`POST /api/brothers`**: *Protected (Admin)*. Create a new brother (JSON body validated with Zod).
+- **`PUT /api/brothers/:id`**: *Protected (Admin)*. Update brother profile fields (validated against strict allowlist).
+- **`DELETE /api/brothers/:id`**: *Protected (Admin)*. Deletes brother and automatically removes their Cloudinary photo with retry verification.
+- **`POST /api/cloudinary/sign`**: *Protected (Admin)*. Generates signed direct-upload parameters for client uploads.
+- **`POST /api/cloudinary/upload`**: *Protected (Admin)*. Accepts multipart FormData (`file`, `category`, `altText`), buffers the upload server-side to Cloudinary, and persists metadata in the MongoDB `Asset` collection.

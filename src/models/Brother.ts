@@ -7,9 +7,9 @@ export interface IBrother extends Document {
   role?: string;
   category: BrotherCategory;
   classSymbol?: string;
-  imageUrl: string;
+  imageUrl?: string;
   cloudinaryPublicId?: string;
-  alt: string;
+  alt?: string;
   hometown?: string;
   major?: string;
   order: number;
@@ -34,7 +34,6 @@ const BrotherSchema = new Schema<IBrother>(
       type: String,
       enum: ['exec', 'council', 'active', 'alumni'],
       default: 'active',
-      index: true,
     },
     classSymbol: {
       type: String,
