@@ -4,6 +4,8 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+For detailed instructions on managing the MongoDB database, Cloudinary media CDN, and chapter webmaster access, see [ADMIN_GUIDE.md](ADMIN_GUIDE.md).
+
 First, run the development server:
 
 ```bash

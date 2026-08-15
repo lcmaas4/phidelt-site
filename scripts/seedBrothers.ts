@@ -25,7 +25,7 @@ async function seed() {
   console.log('🧹 Clearing existing brothers collection...');
   await Brother.deleteMany({});
 
-  const brothersToInsert: Array<Record<string, any>> = [];
+  const brothersToInsert: Array<Record<string, unknown>> = [];
 
   // 1. Executive Board
   console.log(`📌 Processing ${execBoard.length} Exec Board members...`);
