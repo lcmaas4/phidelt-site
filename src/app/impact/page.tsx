@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Hero from '../components/Hero/Hero';
+import { siteAssets } from '@/lib/siteAssets';
 import styles from './page.module.css';
 
 export default function Impact() {
@@ -9,7 +10,7 @@ export default function Impact() {
       {/* Hero */}
       <Hero
         title="Our Impact"
-        imageSrc="/impact-bg.png"
+        imageSrc={siteAssets.heroes.impactBg}
         imageAlt="Our Impact background"
       />
 
@@ -39,7 +40,7 @@ export default function Impact() {
                 className={styles.logoWrapper}
               >
                 <Image
-                  src="/impact-livelikelou.png"
+                  src={siteAssets.impact.liveLikeLou}
                   alt="LiveLikeLou Foundation"
                   width={280}
                   height={120}
@@ -53,7 +54,7 @@ export default function Impact() {
                 className={styles.logoWrapper}
               >
                 <Image
-                  src="/impact-ironphi.png"
+                  src={siteAssets.impact.ironPhi}
                   alt="Iron Phi"
                   width={280}
                   height={120}
@@ -71,7 +72,7 @@ export default function Impact() {
           <div className={styles.serviceContent}>
             <div className={styles.serviceImageWrapper}>
               <Image
-                src="/impact-alswalk.jpg"
+                src={siteAssets.impact.alsWalk}
                 alt="Community Service - ALS Walk"
                 fill
                 className={styles.serviceImage}
@@ -114,7 +115,7 @@ export default function Impact() {
             </div>
             <div className={styles.philoWeekImageWrapper}>
               <Image
-                src="/impact-philoweek.png"
+                src={siteAssets.impact.philoWeek}
                 alt="Philanthropy Week"
                 fill
                 className={styles.philoWeekImage}
@@ -133,7 +134,7 @@ export default function Impact() {
             <div className={styles.eventItem}>
               <div className={styles.eventImageWrapper}>
                 <Image
-                  src="/impact-greeksing.jpg"
+                  src={siteAssets.impact.greekSing}
                   alt="Greek Sing Performance"
                   fill
                   className={styles.eventImage}
@@ -155,7 +156,7 @@ export default function Impact() {
             <div className={styles.eventItem}>
               <div className={styles.eventImageWrapper}>
                 <Image
-                  src="/impact-relay.jpg"
+                  src={siteAssets.impact.relay}
                   alt="Brothers at Relay For Life"
                   fill
                   className={styles.eventImage}
@@ -176,7 +177,7 @@ export default function Impact() {
             <div className={styles.eventItem}>
               <div className={styles.eventImageWrapper}>
                 <Image
-                  src="/70-backyard-concert.JPG"
+                  src={siteAssets.impact.concert}
                   alt="Brothers performing at a fundraiser concert"
                   fill
                   className={styles.eventImage}

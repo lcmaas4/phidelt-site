@@ -1,14 +1,20 @@
 import BrotherCard from '../components/BrotherCard/BrotherCard';
 import Hero from '../components/Hero/Hero';
-import { execBoard, council, classes } from './brothersData';
+import { getBrothersData } from '@/lib/brothers';
+import { siteAssets } from '@/lib/siteAssets';
 import styles from './page.module.css';
 
-export default function Brothers() {
+// Revalidate page cache periodically in ISR
+export const revalidate = 60;
+
+export default async function Brothers() {
+  const { execBoard, council, classes } = await getBrothersData();
+
   return (
     <div className={styles.wrapper}>
       <Hero
         title="Our Brothers"
-        imageSrc="/brothers-bg.jpg"
+        imageSrc={siteAssets.heroes.brothersBg}
         imageAlt="Phi Delta Theta Brothers"
       />
       {/* Executive Board */}
@@ -51,3 +57,4 @@ export default function Brothers() {
     </div>
   );
 }
+

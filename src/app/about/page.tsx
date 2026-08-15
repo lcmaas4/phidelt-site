@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Hero from '../components/Hero/Hero';
+import { siteAssets } from '@/lib/siteAssets';
 import styles from './page.module.css';
 
 type Activity = {
@@ -13,21 +14,21 @@ type Activity = {
 const activities: Activity[] = [
   {
     title: 'Academics',
-    imageSrc: '/about-academics.jpg',
+    imageSrc: siteAssets.about.academics,
     imageAlt: 'Brothers studying together',
     description:
       'At Northeastern University, we’re here to pursue our academic and professional ambitions, and our fraternity plays a key role in keeping us on track. With the support of our scholarship chairmen, we stay focused on our studies and work to achieve success both in the classroom and beyond.',
   },
   {
     title: 'Social Events',
-    imageSrc: '/about-social.jpg',
+    imageSrc: siteAssets.about.social,
     imageAlt: 'Brothers at a social event',
     description:
       'We strive to build strong connections with sororities and campus organizations through social events such as mixers and formals. These gatherings build friendships, create memories, and strengthen our Greek community.',
   },
   {
     title: 'Philanthropy',
-    imageSrc: '/about-philo.jpg',
+    imageSrc: siteAssets.about.philo,
     imageAlt: 'Brothers volunteering together',
     priority: true,
     description:
@@ -41,7 +42,7 @@ export default function About() {
       {/* Hero */}
       <Hero
         title="About us"
-        imageSrc="/exec-spring-25.jpg"
+        imageSrc={siteAssets.heroes.aboutBg}
         imageAlt="About us background"
       />
 
@@ -95,7 +96,7 @@ export default function About() {
         </div>
         <div className={styles.historyImageWrapper}>
           <Image
-            src="/history-image.jpg"
+            src={siteAssets.about.history}
             alt="History of Phi Delta Theta"
             width={600}
             height={450}
@@ -113,7 +114,7 @@ export default function About() {
               <div className={styles.brotherhoodGrid}>
                 <div className={styles.brotherhoodTile} aria-hidden="true">
                   <Image
-                    src="/about-brotherhood1.jpg"
+                    src={siteAssets.about.brotherhood1}
                     alt="Brotherhood photo"
                     fill
                     className={styles.brotherhoodImage}
@@ -122,7 +123,7 @@ export default function About() {
                 </div>
                 <div className={styles.brotherhoodTile} aria-hidden="true">
                   <Image
-                    src="/about-brotherhood2.jpg"
+                    src={siteAssets.about.brotherhood2}
                     alt="Brotherhood photo"
                     fill
                     className={styles.brotherhoodImage}
@@ -131,7 +132,7 @@ export default function About() {
                 </div>
                 <div className={styles.brotherhoodTile} aria-hidden="true">
                   <Image
-                    src="/about-brotherhood3.png"
+                    src={siteAssets.about.brotherhood3}
                     alt="Brotherhood photo"
                     fill
                     className={styles.brotherhoodImage}
@@ -140,7 +141,7 @@ export default function About() {
                 </div>
                 <div className={styles.brotherhoodTile} aria-hidden="true">
                   <Image
-                    src="/about-brotherhood4.jpg"
+                    src={siteAssets.about.brotherhood4}
                     alt="Brotherhood photo"
                     fill
                     className={styles.brotherhoodImage}
