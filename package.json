@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint src",
-    "seed:brothers": "tsx scripts/seedBrothers.ts"
+    "lint": "eslint src"
   },
   "dependencies": {
     "cloudinary": "^2.10.0",
