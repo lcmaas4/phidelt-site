@@ -53,7 +53,7 @@ export const siteAssets = {
     brothersBg: getCloudinaryImageUrl('phidelt-site/heroes/brothers-bg'),
     rushBg: getCloudinaryImageUrl('phidelt-site/heroes/rush-bg'),
     impactBg: getCloudinaryImageUrl('phidelt-site/heroes/impact-bg'),
-    aboutBg: getCloudinaryImageUrl('phidelt-site/heroes/exec-spring-25'),
+    aboutBg: getCloudinaryImageUrl('phidelt-site/heroes/about-bg'),
   },
 
   // About Page
