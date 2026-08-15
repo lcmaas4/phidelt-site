@@ -111,3 +111,10 @@ The site exposes serverless REST endpoints for programmatic management.
 - **`DELETE /api/brothers/:id`**: *Protected (Admin)*. Deletes brother and automatically removes their Cloudinary photo with retry verification.
 - **`POST /api/cloudinary/sign`**: *Protected (Admin)*. Generates signed direct-upload parameters for client uploads.
 - **`POST /api/cloudinary/upload`**: *Protected (Admin)*. Accepts multipart FormData (`file`, `category`, `altText`), buffers the upload server-side to Cloudinary, and persists metadata in the MongoDB `Asset` collection.
+
+---
+
+## 7. AI Agent Instructions
+
+For automated and pair-programming AI coding assistants working on database mutations and Cloudinary media lifecycles, full operational guidelines and TypeScript snippets are documented in [`AGENTS.md`](AGENTS.md).
+
